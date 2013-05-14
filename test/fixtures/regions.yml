@@ -1,0 +1,2312 @@
+R0:
+  id: 0
+  name:  
+  country_id: 0
+  lat: 0
+  lng: 0
+  user_id: 0
+
+
+R1:
+  id: 1
+  name: Abkhazia
+  country_id: 17
+  lat: 37.85
+  lng: 38.95
+  user_id: 0
+
+
+R2:
+  id: 2
+  name: Aconcagua
+  country_id: 14
+  lat: 49.21
+  lng: 86.13
+  user_id: 0
+
+
+R3:
+  id: 3
+  name: Aegean islands
+  country_id: 19
+  lat: 95.97
+  lng: 8.4
+  user_id: 0
+
+
+R4:
+  id: 4
+  name: Aguascalientes
+  country_id: 26
+  lat: 33.73
+  lng: 97.26
+  user_id: 0
+
+
+R5:
+  id: 5
+  name: Ahr
+  country_id: 18
+  lat: 89.81
+  lng: 7.77
+  user_id: 0
+
+
+R6:
+  id: 6
+  name: Alentejo
+  country_id: 31
+  lat: 14.68
+  lng: 18.22
+  user_id: 0
+
+
+R7:
+  id: 7
+  name: Algiers
+  country_id: 2
+  lat: 77.3
+  lng: 37.32
+  user_id: 0
+
+
+R8:
+  id: 8
+  name: Alsace
+  country_id: 16
+  lat: 41.68
+  lng: 50.31
+  user_id: 0
+
+
+R9:
+  id: 9
+  name: Andalusia
+  country_id: 38
+  lat: 50.65
+  lng: 21.55
+  user_id: 0
+
+
+R10:
+  id: 10
+  name: Apulia
+  country_id: 22
+  lat: 69.92
+  lng: 91.82
+  user_id: 0
+
+
+R11:
+  id: 11
+  name: Aragon
+  country_id: 38
+  lat: 93.12
+  lng: 68.93
+  user_id: 0
+
+
+R12:
+  id: 12
+  name: Ararat Valley
+  country_id: 4
+  lat: 50.85
+  lng: 70.69
+  user_id: 0
+
+
+R13:
+  id: 13
+  name: Areni
+  country_id: 4
+  lat: 73.05
+  lng: 64.01
+  user_id: 0
+
+
+R14:
+  id: 14
+  name: Arequipa
+  country_id: 30
+  lat: 33.74
+  lng: 29.25
+  user_id: 0
+
+
+R15:
+  id: 15
+  name: Arianah
+  country_id: 40
+  lat: 64.21
+  lng: 55.24
+  user_id: 0
+
+
+R16:
+  id: 16
+  name: Arizona
+  country_id: 41
+  lat: 30.79
+  lng: 51.42
+  user_id: 0
+
+
+R17:
+  id: 17
+  name: Arkansas
+  country_id: 41
+  lat: 47.13
+  lng: 12.75
+  user_id: 0
+
+
+R18:
+  id: 18
+  name: Atacama
+  country_id: 14
+  lat: 71.51
+  lng: 1.91
+  user_id: 0
+
+
+R19:
+  id: 19
+  name: Atlas Mountains
+  country_id: 28
+  lat: 62.6
+  lng: 37.96
+  user_id: 0
+
+
+R20:
+  id: 20
+  name: Auckland Region
+  country_id: 29
+  lat: 78.94
+  lng: 90.51
+  user_id: 0
+
+
+R21:
+  id: 21
+  name: Baden
+  country_id: 18
+  lat: 44.55
+  lng: 92.51
+  user_id: 0
+
+
+R22:
+  id: 22
+  name: Bahia
+  country_id: 10
+  lat: 34.64
+  lng: 52.95
+  user_id: 0
+
+
+R23:
+  id: 23
+  name: Bairrada
+  country_id: 31
+  lat: 22.36
+  lng: 62.86
+  user_id: 0
+
+
+R24:
+  id: 24
+  name: Baja California
+  country_id: 26
+  lat: 33.07
+  lng: 43.32
+  user_id: 0
+
+
+R25:
+  id: 25
+  name: Baku
+  country_id: 7
+  lat: 3.46
+  lng: 73.74
+  user_id: 0
+
+
+R26:
+  id: 26
+  name: Balaton
+  country_id: 20
+  lat: 67.51
+  lng: 99.31
+  user_id: 0
+
+
+R27:
+  id: 27
+  name: Balearic Islands
+  country_id: 38
+  lat: 0.82
+  lng: 57.51
+  user_id: 0
+
+
+R28:
+  id: 28
+  name: Banat
+  country_id: 32
+  lat: 58.72
+  lng: 76.39
+  user_id: 0
+
+
+R29:
+  id: 29
+  name: Bardar
+  country_id: 27
+  lat: 80.81
+  lng: 18.75
+  user_id: 0
+
+
+R30:
+  id: 30
+  name: Basque Country
+  country_id: 38
+  lat: 83.12
+  lng: 47.97
+  user_id: 0
+
+
+R31:
+  id: 31
+  name: Bay of Plenty
+  country_id: 29
+  lat: 15.33
+  lng: 64.74
+  user_id: 0
+
+
+R32:
+  id: 32
+  name: Béjaïa
+  country_id: 2
+  lat: 16.59
+  lng: 78.62
+  user_id: 0
+
+
+R33:
+  id: 33
+  name: Berat
+  country_id: 1
+  lat: 28.44
+  lng: 56.72
+  user_id: 0
+
+
+R34:
+  id: 34
+  name: Black Sea region
+  country_id: 11
+  lat: 28.59
+  lng: 59.54
+  user_id: 0
+
+
+R35:
+  id: 35
+  name: Bohemia
+  country_id: 15
+  lat: 32.04
+  lng: 27.88
+  user_id: 0
+
+
+R36:
+  id: 36
+  name: Bordeaux
+  country_id: 16
+  lat: 76.7
+  lng: 98.95
+  user_id: 0
+
+
+R37:
+  id: 37
+  name: Breede River Valley
+  country_id: 37
+  lat: 19.23
+  lng: 50.65
+  user_id: 0
+
+
+R38:
+  id: 38
+  name: British Columbia
+  country_id: 12
+  lat: 88.35
+  lng: 61.86
+  user_id: 0
+
+
+R39:
+  id: 39
+  name: Bucelas
+  country_id: 31
+  lat: 33.73
+  lng: 26.73
+  user_id: 0
+
+
+R40:
+  id: 40
+  name: Buenos Aires
+  country_id: 3
+  lat: 81.11
+  lng: 86.45
+  user_id: 0
+
+
+R41:
+  id: 41
+  name: Burgenland
+  country_id: 6
+  lat: 38.33
+  lng: 89.75
+  user_id: 0
+
+
+R42:
+  id: 42
+  name: Burgundy
+  country_id: 16
+  lat: 75.96
+  lng: 25.61
+  user_id: 0
+
+
+R43:
+  id: 43
+  name: California
+  country_id: 41
+  lat: 55.72
+  lng: 16.22
+  user_id: 0
+
+
+R44:
+  id: 44
+  name: Canary Islands
+  country_id: 38
+  lat: 95.26
+  lng: 94.46
+  user_id: 0
+
+
+R45:
+  id: 45
+  name: Canterbury
+  country_id: 29
+  lat: 89.69
+  lng: 30.6
+  user_id: 0
+
+
+R46:
+  id: 46
+  name: Carcavelos
+  country_id: 31
+  lat: 16.46
+  lng: 5.08
+  user_id: 0
+
+
+R47:
+  id: 47
+  name: Carora
+  country_id: 42
+  lat: 28.17
+  lng: 3.56
+  user_id: 0
+
+
+R48:
+  id: 48
+  name: Castile and León
+  country_id: 38
+  lat: 32.85
+  lng: 16.38
+  user_id: 0
+
+
+R49:
+  id: 49
+  name: Castile–La Mancha
+  country_id: 38
+  lat: 49.81
+  lng: 4.04
+  user_id: 0
+
+
+R50:
+  id: 50
+  name: Catalonia
+  country_id: 38
+  lat: 8.57
+  lng: 68.25
+  user_id: 0
+
+
+R51:
+  id: 51
+  name: Catamarca
+  country_id: 3
+  lat: 5.13
+  lng: 52.15
+  user_id: 0
+
+
+R52:
+  id: 52
+  name: Caucasus
+  country_id: 33
+  lat: 31.49
+  lng: 50.6
+  user_id: 0
+
+
+R53:
+  id: 53
+  name: Central Greece
+  country_id: 19
+  lat: 17.74
+  lng: 72.06
+  user_id: 0
+
+
+R54:
+  id: 54
+  name: Central Otago
+  country_id: 29
+  lat: 61.37
+  lng: 79.87
+  user_id: 0
+
+
+R55:
+  id: 55
+  name: Central Valley
+  country_id: 14
+  lat: 17.55
+  lng: 51.57
+  user_id: 0
+
+
+R56:
+  id: 56
+  name: Chã das Caldeiras
+  country_id: 13
+  lat: 57.03
+  lng: 93.86
+  user_id: 0
+
+
+R57:
+  id: 57
+  name: Champagne
+  country_id: 16
+  lat: 27.6
+  lng: 17.03
+  user_id: 0
+
+
+R58:
+  id: 58
+  name: Chlef
+  country_id: 2
+  lat: 11.5
+  lng: 78.69
+  user_id: 0
+
+
+R59:
+  id: 59
+  name: Coahuila / Durango
+  country_id: 26
+  lat: 10.58
+  lng: 60.9
+  user_id: 0
+
+
+R60:
+  id: 60
+  name: Codri
+  country_id: 27
+  lat: 12.26
+  lng: 14.9
+  user_id: 0
+
+
+R61:
+  id: 61
+  name: Colares
+  country_id: 31
+  lat: 65.37
+  lng: 61.24
+  user_id: 0
+
+
+R62:
+  id: 62
+  name: Colorado
+  country_id: 41
+  lat: 48.6
+  lng: 54.07
+  user_id: 0
+
+
+R63:
+  id: 63
+  name: Community of Madrid
+  country_id: 38
+  lat: 87.15
+  lng: 55.17
+  user_id: 0
+
+
+R64:
+  id: 64
+  name: Constantia
+  country_id: 37
+  lat: 99.79
+  lng: 68.14
+  user_id: 0
+
+
+R65:
+  id: 65
+  name: Coquimbo
+  country_id: 14
+  lat: 89.54
+  lng: 76.9
+  user_id: 0
+
+
+R66:
+  id: 66
+  name: Cork
+  country_id: 21
+  lat: 69.51
+  lng: 99.58
+  user_id: 0
+
+
+R67:
+  id: 67
+  name: Côtes de Sambre et Meuse
+  country_id: 8
+  lat: 26.49
+  lng: 52.64
+  user_id: 0
+
+
+R68:
+  id: 68
+  name: Cricova
+  country_id: 27
+  lat: 51.19
+  lng: 58.6
+  user_id: 0
+
+
+R69:
+  id: 69
+  name: Crişana
+  country_id: 32
+  lat: 28.89
+  lng: 15.51
+  user_id: 0
+
+
+R70:
+  id: 70
+  name: D'hara
+  country_id: 2
+  lat: 6.13
+  lng: 42.79
+  user_id: 0
+
+
+R71:
+  id: 71
+  name: Danubian Plain
+  country_id: 11
+  lat: 97.67
+  lng: 56.98
+  user_id: 0
+
+
+R72:
+  id: 72
+  name: Dão
+  country_id: 31
+  lat: 11.45
+  lng: 35.87
+  user_id: 0
+
+
+R73:
+  id: 73
+  name: Dobrogea
+  country_id: 32
+  lat: 40.59
+  lng: 35.97
+  user_id: 0
+
+
+R74:
+  id: 74
+  name: Duna
+  country_id: 20
+  lat: 94.41
+  lng: 18.91
+  user_id: 0
+
+
+R75:
+  id: 75
+  name: Durbanville
+  country_id: 37
+  lat: 42.42
+  lng: 14.61
+  user_id: 0
+
+
+R76:
+  id: 76
+  name: Eger
+  country_id: 20
+  lat: 97.14
+  lng: 60.15
+  user_id: 0
+
+
+R77:
+  id: 77
+  name: Elgin
+  country_id: 37
+  lat: 93.27
+  lng: 33.1
+  user_id: 0
+
+
+R78:
+  id: 78
+  name: Elim
+  country_id: 37
+  lat: 98.24
+  lng: 14.07
+  user_id: 0
+
+
+R79:
+  id: 79
+  name: Emilia-Romagna
+  country_id: 22
+  lat: 56.13
+  lng: 5.21
+  user_id: 0
+
+
+R80:
+  id: 80
+  name: Extremadura
+  country_id: 38
+  lat: 25.66
+  lng: 11.03
+  user_id: 0
+
+
+R81:
+  id: 81
+  name: Franconia (Franken)
+  country_id: 18
+  lat: 63.47
+  lng: 6.11
+  user_id: 0
+
+
+R82:
+  id: 82
+  name: Franschhoek
+  country_id: 37
+  lat: 29.9
+  lng: 14.44
+  user_id: 0
+
+
+R83:
+  id: 83
+  name: Galicia
+  country_id: 38
+  lat: 61.23
+  lng: 49.09
+  user_id: 0
+
+
+R84:
+  id: 84
+  name: Ganja
+  country_id: 7
+  lat: 70.69
+  lng: 66.42
+  user_id: 0
+
+
+R85:
+  id: 85
+  name: Geneva
+  country_id: 39
+  lat: 30.11
+  lng: 63.38
+  user_id: 0
+
+
+R86:
+  id: 86
+  name: Georgia plateau/Piedmont
+  country_id: 41
+  lat: 27.35
+  lng: 27.13
+  user_id: 0
+
+
+R87:
+  id: 87
+  name: Gisborne
+  country_id: 29
+  lat: 35.27
+  lng: 38.26
+  user_id: 0
+
+
+R88:
+  id: 88
+  name: Grisons
+  country_id: 39
+  lat: 16.66
+  lng: 32.6
+  user_id: 0
+
+
+R89:
+  id: 89
+  name: Hagelandse wijn
+  country_id: 8
+  lat: 75.78
+  lng: 51.39
+  user_id: 0
+
+
+R90:
+  id: 90
+  name: Haspengouw
+  country_id: 8
+  lat: 63.78
+  lng: 67.28
+  user_id: 0
+
+
+R91:
+  id: 91
+  name: Hawke's Bay Region
+  country_id: 29
+  lat: 67.99
+  lng: 41.64
+  user_id: 0
+
+
+R92:
+  id: 92
+  name: Hessische Bergstraße
+  country_id: 18
+  lat: 6.02
+  lng: 89.08
+  user_id: 0
+
+
+R93:
+  id: 93
+  name: Heuvelland
+  country_id: 8
+  lat: 22.86
+  lng: 82.35
+  user_id: 0
+
+
+R94:
+  id: 94
+  name: Hidalgo
+  country_id: 26
+  lat: 3.9
+  lng: 59
+  user_id: 0
+
+
+R95:
+  id: 95
+  name: Hînces
+  country_id: 27
+  lat: 99.96
+  lng: 17.83
+  user_id: 0
+
+
+R96:
+  id: 96
+  name: Huaral District
+  country_id: 30
+  lat: 69.78
+  lng: 71.54
+  user_id: 0
+
+
+R97:
+  id: 97
+  name: Ica region
+  country_id: 30
+  lat: 38.6
+  lng: 96.85
+  user_id: 0
+
+
+R98:
+  id: 98
+  name: Ijevan
+  country_id: 4
+  lat: 13.38
+  lng: 5.29
+  user_id: 0
+
+
+R99:
+  id: 99
+  name: Illinois
+  country_id: 41
+  lat: 68.85
+  lng: 31.14
+  user_id: 0
+
+
+R100:
+  id: 100
+  name: Imereti
+  country_id: 17
+  lat: 31.77
+  lng: 29.43
+  user_id: 0
+
+
+R101:
+  id: 101
+  name: Ionian Islands
+  country_id: 19
+  lat: 33.25
+  lng: 4.39
+  user_id: 0
+
+
+R102:
+  id: 102
+  name: Jura
+  country_id: 16
+  lat: 0.04
+  lng: 46.28
+  user_id: 0
+
+
+R103:
+  id: 103
+  name: Južnoslovenská
+  country_id: 35
+  lat: 51.79
+  lng: 3.41
+  user_id: 0
+
+
+R104:
+  id: 104
+  name: Kakheti
+  country_id: 17
+  lat: 46.57
+  lng: 74.8
+  user_id: 0
+
+
+R105:
+  id: 105
+  name: Kartli
+  country_id: 17
+  lat: 79.85
+  lng: 96.64
+  user_id: 0
+
+
+R106:
+  id: 106
+  name: Korça
+  country_id: 1
+  lat: 34.46
+  lng: 6.25
+  user_id: 0
+
+
+R107:
+  id: 107
+  name: Kosovo
+  country_id: 34
+  lat: 68.57
+  lng: 93.47
+  user_id: 0
+
+
+R108:
+  id: 108
+  name: Krasnodar
+  country_id: 33
+  lat: 54.03
+  lng: 11.57
+  user_id: 0
+
+
+R109:
+  id: 109
+  name: La Rioja
+  country_id: 3
+  lat: 5.47
+  lng: 74.75
+  user_id: 0
+
+
+R110:
+  id: 110
+  name: Lagoa
+  country_id: 31
+  lat: 69.08
+  lng: 74.12
+  user_id: 0
+
+
+R111:
+  id: 111
+  name: Lagos
+  country_id: 31
+  lat: 33.67
+  lng: 44.95
+  user_id: 0
+
+
+R112:
+  id: 112
+  name: Languedoc-Roussillon
+  country_id: 16
+  lat: 4.45
+  lng: 33.59
+  user_id: 0
+
+
+R113:
+  id: 113
+  name: Leskovik
+  country_id: 1
+  lat: 41.95
+  lng: 97.87
+  user_id: 0
+
+
+R114:
+  id: 114
+  name: Lezhë
+  country_id: 1
+  lat: 41.49
+  lng: 96.11
+  user_id: 0
+
+
+R115:
+  id: 115
+  name: Liguria
+  country_id: 22
+  lat: 49.25
+  lng: 96.04
+  user_id: 0
+
+
+R116:
+  id: 116
+  name: Little Karoo
+  country_id: 37
+  lat: 98.97
+  lng: 34.86
+  user_id: 0
+
+
+R117:
+  id: 117
+  name: Loire Valley
+  country_id: 16
+  lat: 1.44
+  lng: 73.28
+  user_id: 0
+
+
+R118:
+  id: 118
+  name: Lombardy
+  country_id: 22
+  lat: 88.81
+  lng: 36.06
+  user_id: 0
+
+
+R119:
+  id: 119
+  name: Lorraine
+  country_id: 16
+  lat: 80.38
+  lng: 72.83
+  user_id: 0
+
+
+R120:
+  id: 120
+  name: Macedonia
+  country_id: 19
+  lat: 6.46
+  lng: 95.18
+  user_id: 0
+
+
+R121:
+  id: 121
+  name: Madeira
+  country_id: 31
+  lat: 26.92
+  lng: 79.32
+  user_id: 0
+
+
+R122:
+  id: 122
+  name: Madiran
+  country_id: 16
+  lat: 55.61
+  lng: 27.74
+  user_id: 0
+
+
+R123:
+  id: 123
+  name: Maine
+  country_id: 41
+  lat: 38.18
+  lng: 41.23
+  user_id: 0
+
+
+R124:
+  id: 124
+  name: Malokarpatská
+  country_id: 35
+  lat: 85.43
+  lng: 26.81
+  user_id: 0
+
+
+R125:
+  id: 125
+  name: Marlborough
+  country_id: 29
+  lat: 19.63
+  lng: 16.99
+  user_id: 0
+
+
+R126:
+  id: 126
+  name: Mascara
+  country_id: 2
+  lat: 11.92
+  lng: 50.8
+  user_id: 0
+
+
+R127:
+  id: 127
+  name: Mato Grosso
+  country_id: 10
+  lat: 39.44
+  lng: 95.84
+  user_id: 0
+
+
+R128:
+  id: 128
+  name: Mendoza
+  country_id: 3
+  lat: 93.68
+  lng: 12.81
+  user_id: 0
+
+
+R129:
+  id: 129
+  name: Michigan
+  country_id: 41
+  lat: 51.18
+  lng: 14.37
+  user_id: 0
+
+
+R130:
+  id: 130
+  name: Minas Gerais
+  country_id: 10
+  lat: 43.64
+  lng: 98.81
+  user_id: 0
+
+
+R131:
+  id: 131
+  name: Minnesota
+  country_id: 41
+  lat: 91.07
+  lng: 4.38
+  user_id: 0
+
+
+R132:
+  id: 132
+  name: Missouri
+  country_id: 41
+  lat: 87.26
+  lng: 86.41
+  user_id: 0
+
+
+R133:
+  id: 133
+  name: Mittelrhein
+  country_id: 18
+  lat: 77.7
+  lng: 59.36
+  user_id: 0
+
+
+R134:
+  id: 134
+  name: Moldavia
+  country_id: 32
+  lat: 58.25
+  lng: 11.79
+  user_id: 0
+
+
+R135:
+  id: 135
+  name: Moravia
+  country_id: 15
+  lat: 30.64
+  lng: 28.85
+  user_id: 0
+
+
+R136:
+  id: 136
+  name: Mosel
+  country_id: 18
+  lat: 85.12
+  lng: 88.63
+  user_id: 0
+
+
+R137:
+  id: 137
+  name: Moselle Valley
+  country_id: 24
+  lat: 18.17
+  lng: 1.28
+  user_id: 0
+
+
+R138:
+  id: 138
+  name: Muntenia
+  country_id: 32
+  lat: 67.44
+  lng: 13.86
+  user_id: 0
+
+
+R139:
+  id: 139
+  name: Nabul
+  country_id: 40
+  lat: 44.29
+  lng: 9.08
+  user_id: 0
+
+
+R140:
+  id: 140
+  name: Nagano
+  country_id: 23
+  lat: 94.3
+  lng: 9.23
+  user_id: 0
+
+
+R141:
+  id: 141
+  name: Nahe
+  country_id: 18
+  lat: 82.85
+  lng: 38.46
+  user_id: 0
+
+
+R142:
+  id: 142
+  name: Navarre
+  country_id: 38
+  lat: 44.96
+  lng: 84.78
+  user_id: 0
+
+
+R143:
+  id: 143
+  name: Nelson
+  country_id: 29
+  lat: 60.7
+  lng: 77.83
+  user_id: 0
+
+
+R144:
+  id: 144
+  name: Neuchâtel
+  country_id: 39
+  lat: 21.57
+  lng: 31.39
+  user_id: 0
+
+
+R145:
+  id: 145
+  name: Neuquén
+  country_id: 3
+  lat: 77.8
+  lng: 47.46
+  user_id: 0
+
+
+R146:
+  id: 146
+  name: New Jersey
+  country_id: 41
+  lat: 80.46
+  lng: 37.47
+  user_id: 0
+
+
+R147:
+  id: 147
+  name: New Mexico
+  country_id: 41
+  lat: 8.38
+  lng: 86.01
+  user_id: 0
+
+
+R148:
+  id: 148
+  name: New South Wales
+  country_id: 5
+  lat: 57.62
+  lng: 71.75
+  user_id: 0
+
+
+R149:
+  id: 149
+  name: New York
+  country_id: 41
+  lat: 29.84
+  lng: 79.24
+  user_id: 0
+
+
+R150:
+  id: 150
+  name: Nišava–South Morava
+  country_id: 34
+  lat: 93
+  lng: 28
+  user_id: 0
+
+
+R151:
+  id: 151
+  name: Nitrianska
+  country_id: 35
+  lat: 15.02
+  lng: 92.45
+  user_id: 0
+
+
+R152:
+  id: 152
+  name: North Carolina
+  country_id: 41
+  lat: 57.85
+  lng: 56.46
+  user_id: 0
+
+
+R153:
+  id: 153
+  name: Northland Region
+  country_id: 29
+  lat: 77.47
+  lng: 14.84
+  user_id: 0
+
+
+R154:
+  id: 154
+  name: Nova Scotia
+  country_id: 12
+  lat: 72.38
+  lng: 79.87
+  user_id: 0
+
+
+R155:
+  id: 155
+  name: Nuevo León
+  country_id: 26
+  lat: 49.56
+  lng: 14.37
+  user_id: 0
+
+
+R156:
+  id: 156
+  name: Ohio
+  country_id: 41
+  lat: 22.42
+  lng: 7.5
+  user_id: 0
+
+
+R157:
+  id: 157
+  name: Oklahoma
+  country_id: 41
+  lat: 14.57
+  lng: 88.45
+  user_id: 0
+
+
+R158:
+  id: 158
+  name: Oltenia
+  country_id: 32
+  lat: 64.52
+  lng: 32.91
+  user_id: 0
+
+
+R159:
+  id: 159
+  name: Ontario
+  country_id: 12
+  lat: 36.04
+  lng: 5.11
+  user_id: 0
+
+
+R160:
+  id: 160
+  name: Orange River Valley
+  country_id: 37
+  lat: 7.23
+  lng: 44.37
+  user_id: 0
+
+
+R161:
+  id: 161
+  name: Oregon
+  country_id: 41
+  lat: 85.75
+  lng: 18.97
+  user_id: 0
+
+
+R162:
+  id: 162
+  name: Paarl
+  country_id: 37
+  lat: 79.94
+  lng: 39.43
+  user_id: 0
+
+
+R163:
+  id: 163
+  name: Palatinate (Pfalz)
+  country_id: 18
+  lat: 92.08
+  lng: 27.25
+  user_id: 0
+
+
+R164:
+  id: 164
+  name: Pannon
+  country_id: 20
+  lat: 83.8
+  lng: 27.88
+  user_id: 0
+
+
+R165:
+  id: 165
+  name: Paraná
+  country_id: 10
+  lat: 2.38
+  lng: 81.14
+  user_id: 0
+
+
+R166:
+  id: 166
+  name: Peloponnesus
+  country_id: 19
+  lat: 1.81
+  lng: 28.53
+  user_id: 0
+
+
+R167:
+  id: 167
+  name: Pennsylvania
+  country_id: 41
+  lat: 53.17
+  lng: 93.75
+  user_id: 0
+
+
+R168:
+  id: 168
+  name: Përmet
+  country_id: 1
+  lat: 37.91
+  lng: 45.41
+  user_id: 0
+
+
+R169:
+  id: 169
+  name: Pernambuco
+  country_id: 10
+  lat: 62.73
+  lng: 47.32
+  user_id: 0
+
+
+R170:
+  id: 170
+  name: Pica
+  country_id: 30
+  lat: 2.45
+  lng: 18.21
+  user_id: 0
+
+
+R171:
+  id: 171
+  name: Piedmont
+  country_id: 22
+  lat: 30.41
+  lng: 20.95
+  user_id: 0
+
+
+R172:
+  id: 172
+  name: Pocerina
+  country_id: 34
+  lat: 81.03
+  lng: 58.97
+  user_id: 0
+
+
+R173:
+  id: 173
+  name: Podravje
+  country_id: 36
+  lat: 74.46
+  lng: 36.46
+  user_id: 0
+
+
+R174:
+  id: 174
+  name: Portimão
+  country_id: 31
+  lat: 90.25
+  lng: 57.48
+  user_id: 0
+
+
+R175:
+  id: 175
+  name: Porto e Douro
+  country_id: 31
+  lat: 94.5
+  lng: 28.09
+  user_id: 0
+
+
+R176:
+  id: 176
+  name: Posavje
+  country_id: 36
+  lat: 89.68
+  lng: 41.38
+  user_id: 0
+
+
+R177:
+  id: 177
+  name: Povardarie
+  country_id: 25
+  lat: 23.73
+  lng: 63.54
+  user_id: 0
+
+
+R178:
+  id: 178
+  name: Primorska
+  country_id: 36
+  lat: 65.48
+  lng: 51.7
+  user_id: 0
+
+
+R179:
+  id: 179
+  name: Provence
+  country_id: 16
+  lat: 68.73
+  lng: 55.72
+  user_id: 0
+
+
+R180:
+  id: 180
+  name: Purcari
+  country_id: 27
+  lat: 57.24
+  lng: 58.47
+  user_id: 0
+
+
+R181:
+  id: 181
+  name: Quebec
+  country_id: 12
+  lat: 96.75
+  lng: 86.65
+  user_id: 0
+
+
+R182:
+  id: 182
+  name: Queensland
+  country_id: 5
+  lat: 0.97
+  lng: 88.51
+  user_id: 0
+
+
+R183:
+  id: 183
+  name: Querétaro
+  country_id: 26
+  lat: 14.72
+  lng: 43.22
+  user_id: 0
+
+
+R184:
+  id: 184
+  name: Racha-Lechkhumi
+  country_id: 17
+  lat: 11.52
+  lng: 76.52
+  user_id: 0
+
+
+R185:
+  id: 185
+  name: Región de Murcia
+  country_id: 38
+  lat: 66.02
+  lng: 30.76
+  user_id: 0
+
+
+R186:
+  id: 186
+  name: Rheingau
+  country_id: 18
+  lat: 20.17
+  lng: 97.82
+  user_id: 0
+
+
+R187:
+  id: 187
+  name: Rheinhessen
+  country_id: 18
+  lat: 33.78
+  lng: 71.97
+  user_id: 0
+
+
+R188:
+  id: 188
+  name: Rhône
+  country_id: 16
+  lat: 97.92
+  lng: 84.2
+  user_id: 0
+
+
+R189:
+  id: 189
+  name: Rio Grande do Sul
+  country_id: 10
+  lat: 1.01
+  lng: 75.87
+  user_id: 0
+
+
+R190:
+  id: 190
+  name: Río Negro
+  country_id: 3
+  lat: 61
+  lng: 67.05
+  user_id: 0
+
+
+R191:
+  id: 191
+  name: Robertson
+  country_id: 37
+  lat: 47.33
+  lng: 37.31
+  user_id: 0
+
+
+R192:
+  id: 192
+  name: Rose Valley
+  country_id: 11
+  lat: 72.27
+  lng: 19.6
+  user_id: 0
+
+
+R193:
+  id: 193
+  name: Saale-Unstrut
+  country_id: 18
+  lat: 88.37
+  lng: 96.03
+  user_id: 0
+
+
+R194:
+  id: 194
+  name: Salta
+  country_id: 3
+  lat: 82.32
+  lng: 65.2
+  user_id: 0
+
+
+R195:
+  id: 195
+  name: San Juan
+  country_id: 3
+  lat: 88.95
+  lng: 89.89
+  user_id: 0
+
+
+R196:
+  id: 196
+  name: Santa Catarina
+  country_id: 10
+  lat: 51.08
+  lng: 54.19
+  user_id: 0
+
+
+R197:
+  id: 197
+  name: São Paulo
+  country_id: 10
+  lat: 21.03
+  lng: 25.82
+  user_id: 0
+
+
+R198:
+  id: 198
+  name: Sardinia
+  country_id: 22
+  lat: 23.58
+  lng: 7.81
+  user_id: 0
+
+
+R199:
+  id: 199
+  name: Savoie
+  country_id: 16
+  lat: 80.92
+  lng: 27.38
+  user_id: 0
+
+
+R200:
+  id: 200
+  name: Saxony (Sachsen)
+  country_id: 18
+  lat: 48.53
+  lng: 15.03
+  user_id: 0
+
+
+R201:
+  id: 201
+  name: Setúbal
+  country_id: 31
+  lat: 15.58
+  lng: 88.68
+  user_id: 0
+
+
+R202:
+  id: 202
+  name: Shamakhi Rayon
+  country_id: 7
+  lat: 35.49
+  lng: 99.85
+  user_id: 0
+
+
+R203:
+  id: 203
+  name: Shkoder
+  country_id: 1
+  lat: 64.52
+  lng: 65.91
+  user_id: 0
+
+
+R204:
+  id: 204
+  name: Sicily
+  country_id: 22
+  lat: 1.32
+  lng: 87.83
+  user_id: 0
+
+
+R205:
+  id: 205
+  name: Skopsko vinogorje
+  country_id: 25
+  lat: 67.03
+  lng: 84.64
+  user_id: 0
+
+
+R206:
+  id: 206
+  name: Sonora
+  country_id: 26
+  lat: 34.7
+  lng: 0.1
+  user_id: 0
+
+
+R207:
+  id: 207
+  name: Sopron
+  country_id: 20
+  lat: 24.65
+  lng: 4.93
+  user_id: 0
+
+
+R208:
+  id: 208
+  name: Sousse
+  country_id: 40
+  lat: 49.28
+  lng: 8.45
+  user_id: 0
+
+
+R209:
+  id: 209
+  name: South Australia
+  country_id: 5
+  lat: 27.42
+  lng: 89.72
+  user_id: 0
+
+
+R210:
+  id: 210
+  name: South Bass Island
+  country_id: 41
+  lat: 26.23
+  lng: 97.27
+  user_id: 0
+
+
+R211:
+  id: 211
+  name: Southern Styria
+  country_id: 6
+  lat: 16.58
+  lng: 20.31
+  user_id: 0
+
+
+R212:
+  id: 212
+  name: Srem
+  country_id: 34
+  lat: 72.54
+  lng: 51.36
+  user_id: 0
+
+
+R213:
+  id: 213
+  name: St. Gallen
+  country_id: 39
+  lat: 73.21
+  lng: 5.47
+  user_id: 0
+
+
+R214:
+  id: 214
+  name: Stavropol
+  country_id: 33
+  lat: 94.07
+  lng: 49.73
+  user_id: 0
+
+
+R215:
+  id: 215
+  name: Stellenbosch
+  country_id: 37
+  lat: 78.33
+  lng: 28.68
+  user_id: 0
+
+
+R216:
+  id: 216
+  name: Stredoslovenská
+  country_id: 35
+  lat: 38.83
+  lng: 3.1
+  user_id: 0
+
+
+R217:
+  id: 217
+  name: Subotica–Horgoš
+  country_id: 34
+  lat: 31.61
+  lng: 44.14
+  user_id: 0
+
+
+R218:
+  id: 218
+  name: Šumadija–Great Morava
+  country_id: 34
+  lat: 99.59
+  lng: 40.55
+  user_id: 0
+
+
+R219:
+  id: 219
+  name: Swartland
+  country_id: 37
+  lat: 61.33
+  lng: 83.06
+  user_id: 0
+
+
+R220:
+  id: 220
+  name: Tarija
+  country_id: 9
+  lat: 76.38
+  lng: 13.92
+  user_id: 0
+
+
+R221:
+  id: 221
+  name: Tasmania
+  country_id: 5
+  lat: 63.67
+  lng: 39.44
+  user_id: 0
+
+
+R222:
+  id: 222
+  name: Tavira
+  country_id: 31
+  lat: 66.95
+  lng: 15.44
+  user_id: 0
+
+
+R223:
+  id: 223
+  name: Texas
+  country_id: 41
+  lat: 95.1
+  lng: 75.48
+  user_id: 0
+
+
+R224:
+  id: 224
+  name: Thrace
+  country_id: 11
+  lat: 22.92
+  lng: 34.52
+  user_id: 0
+
+
+R225:
+  id: 225
+  name: Ticino
+  country_id: 39
+  lat: 47.73
+  lng: 98.84
+  user_id: 0
+
+
+R226:
+  id: 226
+  name: Tikveš
+  country_id: 25
+  lat: 50.92
+  lng: 95.6
+  user_id: 0
+
+
+R227:
+  id: 227
+  name: Timok
+  country_id: 34
+  lat: 96.97
+  lng: 42.16
+  user_id: 0
+
+
+R228:
+  id: 228
+  name: Tirana County
+  country_id: 1
+  lat: 24.01
+  lng: 40.08
+  user_id: 0
+
+
+R229:
+  id: 229
+  name: Tlemcen
+  country_id: 2
+  lat: 37.08
+  lng: 90.27
+  user_id: 0
+
+
+R230:
+  id: 230
+  name: Tokaj
+  country_id: 20
+  lat: 56.28
+  lng: 13.2
+  user_id: 0
+
+
+R231:
+  id: 231
+  name: Tovuz and Shamkir
+  country_id: 7
+  lat: 15.34
+  lng: 44.25
+  user_id: 0
+
+
+R232:
+  id: 232
+  name: Transylvania
+  country_id: 32
+  lat: 69.02
+  lng: 51.59
+  user_id: 0
+
+
+R233:
+  id: 233
+  name: Trentino-Alto Adige
+  country_id: 22
+  lat: 48.75
+  lng: 82.84
+  user_id: 0
+
+
+R234:
+  id: 234
+  name: Tulbagh
+  country_id: 37
+  lat: 71.95
+  lng: 90.75
+  user_id: 0
+
+
+R235:
+  id: 235
+  name: Tuscany
+  country_id: 22
+  lat: 18.69
+  lng: 20.67
+  user_id: 0
+
+
+R236:
+  id: 236
+  name: Valais
+  country_id: 39
+  lat: 91.13
+  lng: 65.9
+  user_id: 0
+
+
+R237:
+  id: 237
+  name: Valencian Community
+  country_id: 38
+  lat: 65.79
+  lng: 35.76
+  user_id: 0
+
+
+R238:
+  id: 238
+  name: Valley of the Struma River
+  country_id: 11
+  lat: 2.72
+  lng: 14.45
+  user_id: 0
+
+
+R239:
+  id: 239
+  name: Vaud
+  country_id: 39
+  lat: 65.2
+  lng: 39.47
+  user_id: 0
+
+
+R240:
+  id: 240
+  name: Veneto
+  country_id: 22
+  lat: 55.49
+  lng: 9.11
+  user_id: 0
+
+
+R241:
+  id: 241
+  name: Victoria
+  country_id: 5
+  lat: 85.24
+  lng: 6.66
+  user_id: 0
+
+
+R242:
+  id: 242
+  name: Vienna
+  country_id: 6
+  lat: 7.18
+  lng: 33.92
+  user_id: 0
+
+
+R243:
+  id: 243
+  name: Vinhos Verdes
+  country_id: 31
+  lat: 77.77
+  lng: 23.74
+  user_id: 0
+
+
+R244:
+  id: 244
+  name: Virginia
+  country_id: 41
+  lat: 30.48
+  lng: 56.65
+  user_id: 0
+
+
+R245:
+  id: 245
+  name: Východoslovenská
+  country_id: 35
+  lat: 93.71
+  lng: 54.71
+  user_id: 0
+
+
+R246:
+  id: 246
+  name: Waikato
+  country_id: 29
+  lat: 21.06
+  lng: 4.31
+  user_id: 0
+
+
+R247:
+  id: 247
+  name: Wairarapa
+  country_id: 29
+  lat: 93.63
+  lng: 61.5
+  user_id: 0
+
+
+R248:
+  id: 248
+  name: Washington
+  country_id: 41
+  lat: 74.26
+  lng: 17.59
+  user_id: 0
+
+
+R249:
+  id: 249
+  name: West Morava
+  country_id: 34
+  lat: 88.35
+  lng: 17.4
+  user_id: 0
+
+
+R250:
+  id: 250
+  name: Western Australia
+  country_id: 5
+  lat: 36.7
+  lng: 2.65
+  user_id: 0
+
+
+R251:
+  id: 251
+  name: Wisconsin
+  country_id: 41
+  lat: 75.96
+  lng: 52.44
+  user_id: 0
+
+
+R252:
+  id: 252
+  name: Württemberg
+  country_id: 18
+  lat: 34.38
+  lng: 78
+  user_id: 0
+
+
+R253:
+  id: 253
+  name: Yamanashi
+  country_id: 23
+  lat: 76.2
+  lng: 62.33
+  user_id: 0
+
+
+R254:
+  id: 254
+  name: Zacatecas
+  country_id: 26
+  lat: 64.56
+  lng: 58.16
+  user_id: 0
+
+
+R255:
+  id: 255
+  name: Zona Sur
+  country_id: 14
+  lat: 24.75
+  lng: 96.94
+  user_id: 0
+
+
+R256:
+  id: 256
+  name: Zürich
+  country_id: 39
+  lat: 20.43
+  lng: 35.48
+  user_id: 0
+

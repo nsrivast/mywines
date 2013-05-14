@@ -1,0 +1,26 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<div class="field">
+  <b>Name:</b> <%= @user.name %>
+</div>
+
+<div class="field">
+  <b>Email:</b> <%= @user.email %>
+</div>
+
+<div class="main_table">
+	<% if @user.tastings.length == 0 %>
+		No tastings yet for <%= @user.name %>.
+		<%= link_to 'Click here' , {:controller => 'tastings', :action => 'new', :user_id_preselect => @user.id} %> 		to add one.
+	<% else %>
+		<h3><%= @user.name %>'s tastings</h3>
+		<%= render :partial => 'tastings/table', :locals => {:tastings => @user.tastings, :show_user => false} %>
+	<% end %>
+</div>
+
+
+<%= link_to 'Add tasting for ' + @user.name, {:controller => 'tastings', :action => 'new', :user_id_preselect => @user.id} %> | 
+<%= link_to 'Edit user ', edit_user_path(@user) %> |
+<%= link_to 'See all users', users_path %>

@@ -1,0 +1,16 @@
+w1:
+  id: 0
+  name: Beringer 2010 Merlot Napa
+  vineyard_id: 1
+  vintage: 2010
+  price: 15.0
+  varietal: Merlot
+  
+w2:
+  id: 1
+  name: Sawtooth 2010 Cab Napa
+  vineyard_id: 2
+  vintage: 2010
+  price: 25.0
+  varietal: Cabernet Sauvignon
+  

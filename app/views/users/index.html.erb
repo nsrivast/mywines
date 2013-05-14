@@ -1,0 +1,7 @@
+<h2>User list</h2>
+
+<div class="main_table">
+	<%= render :partial => 'users/table', :locals => {:users => @users, :search => false} %>
+</div>
+
+<%= link_to 'Add a user', new_user_path %>

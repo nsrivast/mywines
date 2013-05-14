@@ -1,0 +1,5 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => 'tastings/table', :locals => {:tastings => [@tasting], :no_search => true}%>
+
+<%= link_to 'Back to all tastings', tastings_path %>

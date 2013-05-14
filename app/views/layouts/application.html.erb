@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mywines</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>Winetracker</title>
 
-<%= yield %>
+		<%= javascript_include_tag "application" %>
+	  <%= javascript_include_tag "jquery-1.1.1.min" %>
+		<%= javascript_include_tag "jquery-ui" %>
+		<%= javascript_include_tag "dataTables.min" %>
+		<%= javascript_include_tag "defaults-ns" %>
 
-</body>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= stylesheet_link_tag    "jquery-ui" %>	
+	  <%= csrf_meta_tags %>
+	</head>
+
+	<body>	
+		<div id="top-banner">
+			<div id="top-banner-content">
+				<div id="logo">
+					WineTracker
+				</div>
+				<div id="sitenav">
+					<%= link_to 'Users', '/users' %> |
+					<%= link_to 'Wines', '/wines' %> |
+					<%= link_to 'Tastings', '/tastings' %> |
+					<%= link_to 'Classifications', '/classification/index' %>
+				</div>
+			</div>
+		</div>
+		
+		<div id="body-wrapper">
+			<%= yield %>
+		</div>
+	</body>
 </html>

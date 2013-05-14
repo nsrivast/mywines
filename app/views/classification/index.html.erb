@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+<h2>Wine Classifications</h2>
+<div class="field">
+	(<a onclick='showClassifications()'>show all</a> / <a onclick='hideClassifications()'>hide all</a>)
+</div>
+<script>
+
+function showClassifications(){
+	$("#classification_table").show();
+};
+function hideClassifications(){
+	$("#classification_table").hide();
+};
+
+
+
+</script>
+<% if @full_list.nil? || @full_list.length == 0 %>
+No classification data.
+<% else %>
+<table id="classification_table">
+	<col class="width30" />
+	<col class="width30" />
+	<col class="width20" />
+	<col class="width20" />
+
+	<thead>
+		<tr>
+			<th>Vineyard</th>
+			<th>Subregion</th>
+			<th>Region</th>
+			<th>Country</th>
+		</tr>
+	</thead>
+	
+	<% @full_list.each do |l| %>
+	<tr>
+		<td>
+			<% if l[0] %>
+			<%= link_to l[1], :action => 'show', :id => l[0], :type => "Vineyard" %>
+			<% end %>
+		</td>
+		<td>
+			<% if l[2] %>
+			<%= link_to l[3], :action => 'show', :id => l[2], :type => "Vineyard" %>
+			<% end %>
+		</td>
+		<td>
+			<% if l[4] %>
+			<%= link_to l[5], :action => 'show', :id => l[4], :type => "Vineyard" %>
+			<% end %>
+		</td>
+		<td>
+			<% if l[6] %>
+			<%= link_to l[7], :action => 'show', :id => l[6], :type => "Vineyard" %>
+			<% end %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+<% end %>
+
+<h3>Add a classification</h3>
+<%= form_tag '/classification/add_classification' do %>
+<table class="noborder">
+	<tr>
+		<th><%= label_tag 'Vineyard' %></th>
+		<th><%= label_tag 'Subregion' %></th>
+		<th><%= label_tag 'Region' %></th>
+		<th><%= label_tag 'Country' %></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td><%= text_field_tag 'v' %></td>
+		<td><%= text_field_tag 's' %></td>
+		<td><%= text_field_tag 'r' %></td>
+		<td><%= text_field_tag 'c' %></td>
+		<td><%= submit_tag 'Add' %></td>
+	</tr>
+</table>
+<% end %>
+
+
+<h3>Add classifications in bulk</h3>
+<%= form_tag '/classification/add_classification_bulk' do %>
+<div class="field">
+	<%= text_area_tag 'input', 'Enter in the form "vineyard,subregion,region,country" with a new line for each entry.', :size => "75x20" %>
+	<%= submit_tag 'Submit' %>
+</div>
+<% end %>

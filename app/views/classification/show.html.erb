@@ -1,0 +1,30 @@
+<h3>Classification for <%= @obj.class %> "<%= @obj.name %>"</h3>
+
+Latitude: <%= @obj.lat %><br />
+Longitude: <%= @obj.lng %><br />
+Belongs to user: <%= @obj.user.name %><br />
+<% if @parent %>
+	Belongs to <%= @parent.class %>: <%= link_to @parent.name, :action => 'show', :id => @parent.id, :type => @parent.class %><br /><br />
+<% end %>
+
+<% unless @children.nil? || @children.length == 0 %>
+	<%= @children[0].class.to_s.pluralize %> in <%= @obj.name %>:<br />
+
+	<ul>
+		<% @children.each do |c| %>
+			<li><%= link_to c.name, :action => 'show', :id => c.id, :type => c.class %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h3><%= @obj.name %>'s Wines</h3>
+
+<% unless @wines.nil? || @wines.length == 0 %>
+	<%= render :partial => 'wines/table', :locals => {:wines => @wines} %>
+<% else %>
+	<%= @obj.name %> has no wines yet.
+<% end %>
+
+
+<br /><br />
+<%= link_to 'Back to all classifications', :action => 'index' %>

@@ -1,4 +1,17 @@
 Mywines::Application.routes.draw do
+  resources :tastings
+
+
+  resources :wines
+
+
+  resources :users
+
+
+  get "classification/index"
+
+  get "classification/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

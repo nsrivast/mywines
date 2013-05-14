@@ -1,0 +1,183 @@
+<%= form_for(@tasting) do |f| %>
+  <% if @tasting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tasting.errors.count, "error") %> prohibited this tasting from being saved:</h2>
+
+      <ul>
+      <% @tasting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+	<div class="field">
+	<table class="noborder">
+		<tr>
+			<td>Select user:</td>
+			<td><%= f.select( :user_id, @users.collect{ |u| [u.name, u.id] } ) %></td>
+		</tr>
+		<tr>
+			<td>Select wine:</td>
+			<td><%= f.select( :wine_id, @wines.collect{ |w| [w.name, w.id] } ) %>
+					<% if @wines.nil? || @wines.length == 0 %>No wines exist yet! <%= link_to 'Click here', new_wine_path %> to add one.<% end %>
+				</td>
+			</tr>
+	</table>
+	
+	<h3>Initial rating</h3>
+  <div class="field">
+		Your first overall impression of the wine: &nbsp;
+    <%= f.select( :rating_first, (1..7).collect { |n| [pretty_rating(n), n] }, :selected => 4) %>
+  </div>
+	
+	<h3>Color</h3>
+	<div class="field"> 
+		<table id="color_table">
+			<tr>
+				<% @colors.each do |color| %>
+					<td style='background-color: #<%=color%>;'>&nbsp;</td>
+				<% end %>
+			</tr>
+			<tr>
+				<% @colors.each do |color| %>
+					<% is_selected = @tasting[:color] == color %>
+					<% selected_color = (is_selected ? 'orange' : 'yellow') %>
+					<td id="color_box_<%=color%>" class="color_field" style='background-color: <%=selected_color%>'>
+						<%= radio_button_tag 'tasting[color]', color, is_selected, :style => "display: none;" %>
+						<a onclick="setColor('<%=color%>')"><%= @color_index[color] %></a>
+					</td>
+				<% end %>
+			</tr>
+		</table>
+	</div>
+	
+  <div class="field">
+    <h3>Flavor</h3>
+    <table class="noborder">
+			<tr>
+				<td>Aroma</td>
+				<td>Taste</td>
+				<td>Aftertaste</td>
+			</tr>
+			<tr>
+				<td><%= f.text_field :adjs_aroma, 
+					:value => (@tasting ? @tasting[:adjs_aroma] : 'start typing to see suggestions ...'), 
+					:size => 40 %></td>
+				<td><%= f.text_field :adjs_taste, :size => 40 %></td>
+				<td><%= f.text_field :adjs_aftertaste, :size => 40 %></td>
+			</tr>
+		</table>
+  </div>
+	
+	<h3>Dimensions</h3>
+	<table id="eval_table">
+		<tr>
+			<th class="noborder"></th>
+			<th class="noborder">less</th>
+			<th class="noborder"></th>
+			<th class="noborder"></th>
+			<th class="noborder"></th>
+			<th class="noborder"></th>
+			<th class="noborder"></th>
+			<th class="noborder">more</th>
+		</tr>
+		
+		<% %w{acidity astringency alcohol sweetness body intensity}.each_with_index do |trait, i| %>
+			<tr class="separator" />
+			<tr>
+				<td class="eval_trait">
+					<label for="tasting_trait_<%=trait%>"><%= trait %></label>
+				</td>
+				<% (-3..3).each do |j| %>
+					<% is_selected = (@tasting[('trait_'+trait).to_sym] == j)%>
+					<% selected_color = (is_selected ? 'orange' : 'yellow') %>
+					<td id="trait_box_<%=trait%>_<%=j%>" class="eval_field" style='background-color: <%=selected_color%>'>
+						<%= radio_button_tag "tasting[trait_"+trait+"]", j, is_selected, :style => "display: none;" %>
+						<a onclick="setTrait('<%=trait%>',<%=j%>)"><%= @trait_indices[trait.to_sym][j+3] %></a>
+					</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</table>
+							
+	<h3>Setting</h3>
+  <div class="field">
+    When did you drink it?<br />
+    <%= f.date_select :drank_on %>
+  </div>
+  <div class="field">
+    How long did the wine sit?<br />
+    <%= f.select( :drank_after, [["fresh out of the bottle", 0], ["15-60 minutes", 1], ["1-4 hours", 2], ["overnight", 3], ["longer", 4]] ) %>
+  </div>
+  <div class="field">
+    Describe the location, the people you drank with, the food you ate - anything that might help you remember the experience.<br />
+    <%= f.text_field :drank_with, :size => 100 %>
+  </div>
+  <div class="field">
+    Would you drink this wine again? If so, would you recommend it for a particular location (fancy restaurant, picnic, dinner party) or with a particular food type (heavy entree, light meal, dessert)?<br />
+    <%= f.text_field :drank_again, :size => 100 %>
+  </div>
+	
+	<h3>Final rating</h3>
+  <div class="field">
+		Your final impression of the wine: &nbsp;
+    <%= f.select( :rating_final, (1..7).collect { |n| [pretty_rating(n), n] }, :selected => 4) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<br />
+<br />
+
+<script>
+	// autocomplete on descriptors for tasting
+	var DESCRIPTORS = ["accessible", "acidic", "aged", "aggressive", "agreeable", "alcoholic", "almond", "amber", "anise", "apple", "apricot", "aromatic", "artichoke", "asparagus", "astringent", "austere", "bacon", "balanced", "balsamic", "banana", "barnyard", "basil", "bay", "beer", "bell pepper", "berry", "big", "biscuit", "bitter", "bitterness", "black cherry", "blackberry", "blackcurrant", "blueberry", "bodied", "bready", "bright", "brilliant", "brown", "bubbly", "burnt wood", "butter", "butterscotch", "cabbage", "camphor", "candied fruit", "candy", "capsicum", "caramel", "cardboard", "carnation", "cedar", "celery", "chalky", "charming", "cheese", "chemical", "cherry", "chestnut", "chewy", "chilled", "chive", "chocolate", "cider", "cigarbox", "cinnamon", "citrus", "clean", "clear", "closed", "cloudy", "clove", "cloying", "coarse", "cocoa", "coffee", "cognac", "complex", "concentrated", "cooked", "corked", "creamy", "crisp", "cucumber", "dark fruits", "delicate", "dense", "dessert", "developed", "dill", "diluted", "direct", "dirty", "dull", "earthy", "easy", "effervescent", "elderberries", "elegant", "empty", "eucalyptus", "farmyard", "fennel", "fern", "fig", "first", "fleshy", "flint", "flinty", "floral", "foamy", "fortified", "forward", "foul", "fragrant", "fresh", "fruity", "full-bodied", "fungal", "funky", "fur", "gamey", "garlic", "garnet", "gassy", "generous", "ginger", "glassy", "glint", "gold", "gooseberry", "grapefruity", "grapes", "grapey", "grass", "green apple", "green bell pepper", "guava", "gunpowder", "harmonious", "harsh", "hay", "hazelnut", "hazy", "heady", "hearty", "heather", "heavy", "hefty", "herbaceous", "herbal", "hollow", "honey", "hyacinth", "incense", "insipid", "intense", "iodine", "jam", "jammy", "jasmine", "juniper", "kerosene", "lactic", "lavender", "leafy", "lean", "leathery", "lemon", "lilac", "lime", "limpid", "linden", "lingering", "liquorice", "lively", "long", "lush", "lychee", "magnolia", "mahogany", "mango", "marmalade", "marshmallow", "marzipan", "mature", "meager", "meaty", "medicinal", "mellow", "melon", "menthol", "mildewy", "mineral", "mint", "moldy", "moss", "mould", "mouse", "murky", "muscat", "mushroom", "musky", "musty", "nectarine", "nettle", "nose", "nouveau", "nut", "nutmeg", "nutty", "oaky", "odorous", "odour", "oily", "olive", "opaque", "oral", "orange", "overripe", "oxidized", "pale", "paper", "passionfruit", "pea", "peach", "pear", "pepper", "peppery", "perfumed", "petrol", "pine", "pine resin", "pineapple", "pink", "plump", "plums", "pomegranate", "powerful", "premier", "pricked", "prune", "puckery", "pungent", "pure", "quince", "raisins", "rare", "raspberry", "raw nuts", "red", "red fruit", "redcurrant", "refined", "resinous", "rich", "ripe", "roasted", "robust", "rose", "rose petals", "roses", "rotten egg", "rough", "round", "rubber", "ruby", "rustic", "sage", "salmon", "salt", "sapid", "satiny", "sharp", "shocking", "silky", "simple", "smell", "smoke", "smoky", "smooth", "sniff", "soapy", "soft", "soften", "solid", "sound", "sour", "sparkling", "spice", "spices", "spicy", "spoiled", "stale", "stewed prunes", "stoney", "straw", "strawberry", "strawy", "sturdy", "stylish", "subtle", "sugary", "sulphurous", "supple", "sweat", "sweet", "syrupy", "tanky", "tannic", "tarlike", "tarry", "tart", "tea", "thin", "thyme", "tight", "tile", "tired", "toasty", "tobacco", "toffee", "truffles", "turbid", "typical", "unbalanced", "underripe", "unfiltered", "unfined", "unpleasant", "unsound", "vanilla", "vanillin", "varnish", "vegetal", "velvety", "vinegary", "vinous", "vintage", "violet", "volatile", "walnut", "warm", "washy", "watery", "weak", "weighty", "white peach", "wild", "woody", "wool", "yeastlike", "yeasty", "yellow", "yellowish", "young"]
+	
+	$(function() {
+
+		var descriptorOptions = $.extend( autocompleteOptions, {source: sourceFunction(DESCRIPTORS)})
+
+		$( "#tasting_adjs_aroma" )
+			.bind( "keydown", keepInWindow)
+			.autocomplete( descriptorOptions )
+
+		$( "#tasting_adjs_taste" )
+			.bind( "keydown", keepInWindow)
+			.autocomplete( descriptorOptions )
+
+		$( "#tasting_adjs_aftertaste" )
+			.bind( "keydown", keepInWindow)
+			.autocomplete( descriptorOptions )
+			
+	});
+
+	function setColor(color) {
+		var colors = ["EAFF80", "FAFA7D", "FDEC7F", "F1D579", "6C0D31", "490921", "3D161B", "340611", "240D15"];
+	
+		$("#tasting_color_" + color).click();
+		for (var i=0; i<colors.length; i++){
+			$("#color_box_" + colors[i]).css('backgroundColor', 'yellow');
+		}
+		$("#color_box_" + color).css('backgroundColor', 'orange');
+	};
+
+	function setTrait(trait, col) {
+		$("#tasting_trait_" + trait + "_" + col).click();
+		for (var j=0; j<7; j++){
+			$("#trait_box_" + trait + "_" + (j-3)).css('backgroundColor', 'yellow');
+		}
+		$("#trait_box_" + trait + "_" + col).css('backgroundColor', 'orange');
+	};
+
+	function sortByColumn(columnName,direction) {
+		var columnIndex = $('tr th').filter(
+		    function(){ return $(this).text() == columnName; }
+			).index();
+			
+		var tastingTable = $('#tasting_table').dataTable();	
+		tastingTable.fnSort([[columnIndex,direction]]);
+	};
+</script>

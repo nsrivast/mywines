@@ -1,0 +1,75 @@
+var varietalTable = document.getElementById("wine_varietal_table");
+var classificationTable = document.getElementById("wine_classification_table");
+
+// fill in varietals, use 1st guess
+<% unless @varietals.nil? || @varietals.length == 0 %>
+	<% @varietals.each do |v| %>
+		addVarietal("<%=v%>");
+	<% end %>
+	useVarietal(0);
+<% end %>
+
+// fill in classifications, use 1st guess
+<% unless @classifications.nil? || @classifications.length == 0 %>
+	<% @classifications.each do |c| %>
+		addClassification("<%=c[0]%>","<%=c[1]%>","<%=c[2]%>","<%=c[3]%>");
+	<% end %>
+	useClassification(0);
+<% end %>
+
+// fill in vintage
+document.getElementById("wine_vintage").value = "<%=@vintage%>";
+
+function addVarietal(v) {
+	  var rowCount = varietalTable.rows.length;
+	  var row = varietalTable.insertRow(rowCount);
+		var i = rowCount - 2; // ith varietal 
+		
+	  var cell0 = row.insertCell(0);
+		cell0.innerHTML = '<a onclick="useVarietal('+i+')" id="varietal'+i+'">'+v+'</a>'
+}
+
+function useVarietal(i)
+{
+	document.getElementById("wine_varietal").value = $("#varietal" + i).html();
+}
+
+function addClassification(vineyard, subregion, region, country) {
+
+  var rowCount = classificationTable.rows.length;
+  var row = classificationTable.insertRow(rowCount);
+	var i = rowCount - 2; // ith classification 
+	
+	var cell0 = row.insertCell(0);
+	cell0.innerHTML = '<a onclick="useVineyard('+i+')" id="vineyard'+i+'">'+vineyard+'</a>'
+	var cell1 = row.insertCell(1);
+	cell1.innerHTML = '<a onclick="useSubregion('+i+')" id="subregion'+i+'">'+subregion+'</a>'
+	var cell2 = row.insertCell(2);
+	cell2.innerHTML = '<a onclick="useRegion('+i+')" id="region'+i+'">'+region+'</a>'
+	var cell3 = row.insertCell(3);
+	cell3.innerHTML = '<a onclick="useCountry('+i+')" id="country'+i+'">'+country+'</a>'
+	
+  var cell4 = row.insertCell(4);
+	cell4.innerHTML = '<a onclick="useClassification('+i+')">use all</a>'
+	
+}
+
+function useClassification(i)
+{
+	useVineyard(i);
+	useSubregion(i);
+	useRegion(i);
+	useCountry(i);
+}
+function useVineyard(i) {
+	document.getElementById("wine_vineyard").value = $("#vineyard" + i).html();
+}
+function useSubregion(i) {
+	document.getElementById("wine_subregion").value = $("#subregion" + i).html();
+}
+function useRegion(i) {
+	document.getElementById("wine_region").value = $("#region" + i).html();
+}
+function useCountry(i) {
+	document.getElementById("wine_country").value = $("#country" + i).html();
+}
