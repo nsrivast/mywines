@@ -1,6 +1,5 @@
 == To Do
 
-- deploy (load new fixtures), kick tires in production
 - set up real accounts, add wines/tastings
 
 

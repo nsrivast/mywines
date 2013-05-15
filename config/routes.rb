@@ -4,7 +4,7 @@ Mywines::Application.routes.draw do
 
   post 'wines/guesser' => 'wines#guesser'
   resources :wines
-
+  
   resources :users
   
   match 'classification/index' => 'classification#index'
@@ -12,6 +12,7 @@ Mywines::Application.routes.draw do
   match 'classification/add_classification_bulk' => 'classification#add_classification_bulk'
   match 'classification/show' => 'classification#show'
 
+  root :to => 'wines#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

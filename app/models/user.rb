@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name
   
-  has_many :tastings
+  has_many :tastings, :dependent => :destroy
   has_many :wines, :through => :tastings
   
   has_many :vineyards
