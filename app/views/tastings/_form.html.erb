@@ -15,14 +15,18 @@
 	<table class="noborder">
 		<tr>
 			<td>Select user:</td>
-			<td><%= f.select( :user_id, @users.collect{ |u| [u.name, u.id] } ) %></td>
+			<td>
+				<%= f.select( :user_id, @users.collect{ |u| [u.name, u.id] } ) %>
+				<% if @users.nil? || @users.length == 0 %>No users exist yet! <%= link_to 'Click here', new_user_path %> to add one.<% end %>
+			</td>
 		</tr>
 		<tr>
 			<td>Select wine:</td>
-			<td><%= f.select( :wine_id, @wines.collect{ |w| [w.name, w.id] } ) %>
-					<% if @wines.nil? || @wines.length == 0 %>No wines exist yet! <%= link_to 'Click here', new_wine_path %> to add one.<% end %>
-				</td>
-			</tr>
+			<td>
+				<%= f.select( :wine_id, @wines.collect{ |w| [w.name, w.id] } ) %>
+				<% if @wines.nil? || @wines.length == 0 %>No wines exist yet! <%= link_to 'Click here', new_wine_path %> to add one.<% end %>
+			</td>
+		</tr>
 	</table>
 	
 	<h3>Initial rating</h3>
@@ -172,12 +176,4 @@
 		$("#trait_box_" + trait + "_" + col).css('backgroundColor', 'orange');
 	};
 
-	function sortByColumn(columnName,direction) {
-		var columnIndex = $('tr th').filter(
-		    function(){ return $(this).text() == columnName; }
-			).index();
-			
-		var tastingTable = $('#tasting_table').dataTable();	
-		tastingTable.fnSort([[columnIndex,direction]]);
-	};
 </script>

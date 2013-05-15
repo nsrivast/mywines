@@ -1,16 +1,17 @@
 Mywines::Application.routes.draw do
+  get 'tastings/duplicate' => 'tastings#duplicate'
   resources :tastings
 
-
+  post 'wines/guesser' => 'wines#guesser'
   resources :wines
 
-
   resources :users
+  
+  match 'classification/index' => 'classification#index'
+  match 'classification/add_classification' => 'classification#add_classification'
+  match 'classification/add_classification_bulk' => 'classification#add_classification_bulk'
+  match 'classification/show' => 'classification#show'
 
-
-  get "classification/index"
-
-  get "classification/show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

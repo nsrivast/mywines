@@ -1,7 +1,11 @@
 <h2>User list</h2>
 
 <div class="main_table">
-	<%= render :partial => 'users/table', :locals => {:users => @users, :search => false} %>
+	<% if @users.nil? || @users.length == 0 %>
+		No users exist yet. <%= link_to 'Click here', new_user_path %> to add one.<br /><br />
+	<% else %>
+		<%= render :partial => 'users/table', :locals => {:users => @users, :search => false} %>
+	<% end %>
 </div>
 
 <%= link_to 'Add a user', new_user_path %>

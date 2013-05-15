@@ -52,10 +52,10 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
     @heritage = @wine.get_heritage()
     
-    @vineyards_js = csv_array(Vineyard.where('name != ""').map{ |v| v.name },'"',",")
-    @subregions_js = csv_array(Subregion.where('name != ""').map{ |v| v.name },'"',",")
-    @regions_js = csv_array(Region.where('name != ""').map{ |v| v.name },'"',",")
-    @countries_js = csv_array(Country.where('name != ""').map{ |v| v.name },'"',",")
+    @vineyards_js = csv_array(Vineyard.where('name != ?', "").map{ |v| v.name },'"',",")
+    @subregions_js = csv_array(Subregion.where('name != ?', "").map{ |v| v.name },'"',",")
+    @regions_js = csv_array(Region.where('name != ?', "").map{ |v| v.name },'"',",")
+    @countries_js = csv_array(Country.where('name != ?', "").map{ |v| v.name },'"',",")
   end
 
   # POST /wines
@@ -83,7 +83,7 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
 
     respond_to do |format|
-      if @wine.update_attributes(params[:wine])
+      if @wine.update_attributes(params[:wine].reject{ |k, v| ['vineyard', 'subregion', 'region', 'country'].include?(k) })
         format.html { redirect_to @wine, :notice => 'Wine was successfully updated.' }
         format.json { head :no_content }
       else

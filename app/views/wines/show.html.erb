@@ -38,7 +38,6 @@ This wine has not yet been reviewed. <%= link_to 'Click here', {:controller => '
 <h3>List of tastings</h3>
 <%= render :partial => 'tastings/table', :locals => {:tastings => @wine.tastings, :show_wine => false} %>
 <% end %>
-
-<%= link_to 'Add tasting for this wine', {:controller => 'tastings', :action => 'new', :wine_id_preselect => @wine.id} %> | 
+ 
 <%= link_to 'Edit wine', edit_wine_path(@wine) %> |
 <%= link_to 'See all wines', wines_path %>

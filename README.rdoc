@@ -1,9 +1,10 @@
 == To Do
 
-- commit mywines to github, delete (archiving) winetracker
-- add account functionality for users, user groups
-- private vs public on wines/tastings, no delete
-- clear users/wines/tastings fixtures
-- kick tires locally, go through setup
-- deploy, kick tires in production
+- deploy (load new fixtures), kick tires in production
 - set up real accounts, add wines/tastings
+
+
+== Future 
+
+- fix photo
+- add account functionality for users, user groups, private vs public on wines/tastings

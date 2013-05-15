@@ -1,5 +1,10 @@
 class Wine < ActiveRecord::Base
   attr_accessible :name, :photo, :price, :vineyard_id, :vintage, :varietal, :purchased
+  attr_accessor :photo_file_name
+  attr_accessor :photo_content_type
+  attr_accessor :photo_file_size
+  attr_accessor :photo_updated_at
+  
   validates :name, :presence => true
 
   has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "20x20>" }, :default_url => "/images/default_wine.png"

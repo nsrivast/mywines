@@ -91,3 +91,14 @@
 	<% end %>
 		
 </table><br />
+
+<script>
+function sortByColumn(columnName,direction) {
+	var columnIndex = $('tr th').filter(
+	    function(){ return $(this).text() == columnName; }
+		).index();
+
+	var tastingTable = $('#tasting_table').dataTable();	
+	tastingTable.fnSort([[columnIndex,direction]]);
+};
+</script>
