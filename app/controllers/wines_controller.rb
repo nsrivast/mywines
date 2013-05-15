@@ -32,10 +32,10 @@ class WinesController < ApplicationController
   def new
     @wine = Wine.new
     
-    @vineyards_js = csv_array(Vineyard.where('name != ""').map{ |v| v.name },'"',",")
-    @subregions_js = csv_array(Subregion.where('name != ""').map{ |v| v.name },'"',",")
-    @regions_js = csv_array(Region.where('name != ""').map{ |v| v.name },'"',",")
-    @countries_js = csv_array(Country.where('name != ""').map{ |v| v.name },'"',",")
+    @vineyards_js = csv_array(Vineyard.where('name != ?', "").map{ |v| v.name },'"',",")
+    @subregions_js = csv_array(Subregion.where('name != ?', "").map{ |v| v.name },'"',",")
+    @regions_js = csv_array(Region.where('name != ?', "").map{ |v| v.name },'"',",")
+    @countries_js = csv_array(Country.where('name != ?', "").map{ |v| v.name },'"',",")
 
     respond_to do |format|
       format.html # new.html.erb
