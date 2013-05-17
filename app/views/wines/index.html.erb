@@ -1,5 +1,9 @@
 <h2>Wine list</h2>
 
+<div class="field">
+	<%= link_to 'Add a wine', new_wine_path %>
+</div>
+
 <div class="main_table">
 	<% if @wines.nil? || @wines.length == 0 %>
 		No wines exist yet. <%= link_to 'Click here', new_wine_path %> to add one.<br /><br />
@@ -7,5 +11,3 @@
 		<%= render :partial => 'wines/table', :locals => {:wines => @wines} %>
 	<% end %>
 </div>
-
-<%= link_to 'Add a wine', new_wine_path %>

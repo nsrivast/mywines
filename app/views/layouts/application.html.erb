@@ -9,6 +9,8 @@
 		<%= javascript_include_tag "dataTables.min.js" %>
 		<%= javascript_include_tag "defaults-ns" %>
 
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+
 	  <%= stylesheet_link_tag    "application", :media => "all" %>
 	  <%= stylesheet_link_tag    "jquery-ui" %>	
 	  <%= csrf_meta_tags %>
@@ -24,7 +26,8 @@
 					<%= link_to 'Users', '/users' %> |
 					<%= link_to 'Wines', '/wines' %> |
 					<%= link_to 'Tastings', '/tastings' %> |
-					<%= link_to 'Classifications', '/classification/index' %>
+					<%= link_to 'Classes', '/classification/index' %> |
+					<%= link_to 'Charts', '/charts/all' %>
 				</div>
 			</div>
 		</div>

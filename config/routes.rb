@@ -1,4 +1,10 @@
 Mywines::Application.routes.draw do
+  get "charts/all"
+  get "charts/rating_v_price"
+  get "charts/price_v_time"
+  get "charts/rating_v_time"
+  get "charts/user"
+
   get 'tastings/duplicate' => 'tastings#duplicate'
   resources :tastings
 

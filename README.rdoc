@@ -1,9 +1,12 @@
 == To Do
 
-- set up real accounts, add wines/tastings
-
+- brainstorm ideas for summary chats, implement
+-- counts of tastings per user, country, region
+-- timeline of tastings, avg rating, price per date
 
 == Future 
 
 - fix photo
+- mobile version
+- geotagged classifications
 - add account functionality for users, user groups, private vs public on wines/tastings
