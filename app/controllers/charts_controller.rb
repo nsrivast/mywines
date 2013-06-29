@@ -1,9 +1,7 @@
 class ChartsController < ApplicationController
   
-  def all
-    epoch_date = Date.new(1970,1,1)
-    user = User.find_by_id(1)
-    tastings = user.tastings
+  def timelines
+    tastings = User.find_by_id(1).tastings
     
     @charts = [
       {
@@ -57,5 +55,29 @@ class ChartsController < ApplicationController
     ]
     
   end
-
+  
+  def traits
+    tastings = User.find_by_id(1).tastings
+    
+    @charts = @traits.collect{ |trait| 
+      {
+        :name => "#{trait}_v_rating",
+        :title => "#{trait} vs rating",
+        :subtitle => "all wines",
+        :datetime => false,
+        :x_axis => "#{trait}",
+        :y_axis => "Rating",
+        :data => tastings.collect{ |t| 
+          {
+            :name => t.wine.name,
+            :click_name => t.wine.pretty_name,
+            :id => t.wine.id,
+            :x => t["trait_#{trait}"],
+            :y => t.wine.avg_rating
+          }
+        }
+      } 
+    }
+  end
+  
 end

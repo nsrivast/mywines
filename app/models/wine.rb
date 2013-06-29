@@ -36,4 +36,6 @@ class Wine < ActiveRecord::Base
       return avg_rating
     end
   end
+  
+  
 end

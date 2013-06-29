@@ -7,19 +7,19 @@
 	
 	<thead>
 	<tr>
-    <% if show_wine %><th class="width10"><a>Wine</a></th><% end %>
-    <% if show_user %><th class="width8"><a>User</a></th><% end %>
+    <% if show_wine %><th style="width:10%;"><a>Wine</a></th><% end %>
+    <% if show_user %><th style="width:7%;"><a>User</a></th><% end %>
 
-    <th class="width10">Rating (1-7)</th>
+    <th style="width:8%;">Rating (1-7)</th>
 		
-    <th class="width25">Color / Flavor</th>
+    <th style="width:20%;">Color / Flavor</th>
 
-		<th class="width25">Dimensions </th>
+		<th style="width:25%;">Dimensions </th>
 		<% @traits.each do |trait| %>
 			<th style="display: none;"><%= trait %></th>
 		<% end %>
 
-    <th class="width20">Setting</th>
+    <th style="width:25%;">Setting</th>
 		<th style="display: none;">Drank On</th>
     <th>Action</th>
   </tr>	
