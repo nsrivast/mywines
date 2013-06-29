@@ -31,8 +31,9 @@ class Wine < ActiveRecord::Base
     if tastings.length == 0
       return false
     else
-      ratings = tastings.collect { |t| [t.rating_first, t.rating_final] }.flatten
-      return ratings.inject(0.0) { |sum, elem| sum + elem } / ratings.length
+      ratings = tastings.collect { |t| t.rating_final }
+      avg_rating = ratings.inject(0.0) { |sum, elem| sum + elem } / ratings.length
+      return avg_rating
     end
   end
 end

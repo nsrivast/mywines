@@ -4,5 +4,6 @@ class Tasting < ActiveRecord::Base
   belongs_to :user
   belongs_to :wine
   
+  validates_presence_of :trait_acidity, :trait_astringency, :trait_alcohol, :trait_sweetness, :trait_body, :trait_intensity
   validates_uniqueness_of :wine_id, :scope => :user_id
 end

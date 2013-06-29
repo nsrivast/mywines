@@ -1,8 +1,6 @@
 == To Do
 
-- brainstorm ideas for summary chats, implement
 -- counts of tastings per user, country, region
--- timeline of tastings, avg rating, price per date
 
 == Future 
 

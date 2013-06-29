@@ -4,23 +4,22 @@
 <% sort = (sort == true) ? true : false %>
 
 <table id="tasting_table<%= search ? "" : "nosearch" %>">
+	
 	<thead>
 	<tr>
-    <% if show_wine %><th><a>Wine</a></th><% end %>
-    <% if show_user %><th><a>User</a></th><% end %>
+    <% if show_wine %><th class="width10"><a>Wine</a></th><% end %>
+    <% if show_user %><th class="width8"><a>User</a></th><% end %>
 
-    <th>Ratings</th>
-		<th style="display: none;">Initial</th>
-		<th style="display: none;">Final</th>
+    <th class="width10">Rating (1-7)</th>
 		
-    <th>Color / Flavor</th>
+    <th class="width25">Color / Flavor</th>
 
-		<th>Dimensions</th>
+		<th class="width25">Dimensions </th>
 		<% @traits.each do |trait| %>
 			<th style="display: none;"><%= trait %></th>
 		<% end %>
 
-    <th>Setting</th>
+    <th class="width20">Setting</th>
 		<th style="display: none;">Drank On</th>
     <th>Action</th>
   </tr>	
@@ -38,32 +37,66 @@
 					<% end %>
 
 			    <td>
-						<% if sort %>(<a onclick="sortByColumn('Initial','desc')">+</a>/<a onclick="sortByColumn('Initial','asc')">-</a>) <% end %>
-						<b>initial:</b>
-						<%= pretty_rating(tasting.rating_first) %><br />
-						<% if sort %>(<a onclick="sortByColumn('Final','desc')">+</a>/<a onclick="sortByColumn('Final','asc')">-</a>) <% end %>
-						<b>final:</b>
 						<%= pretty_rating(tasting.rating_final) %>
 					</td>
-					<td style="display: none;"><%= tasting.rating_first %></td>
-					<td style="display: none;"><%= tasting.rating_final %></td>
 
 			    <td>
-						<b>color:</b>
-						<span style='background-color: #<%=tasting.color%>;'>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</span><br />
-						<b>aroma:</b> <%= tasting.adjs_aroma %><br />
-						<b>taste:</b> <%= tasting.adjs_taste %><br />
-						<b>aftertaste:</b> <%= tasting.adjs_aftertaste %>
+						<table class="noborder">
+							<tr>
+								<td>
+									<b>color</b>
+								</td>
+								<td>
+									<span style='background-color: #<%=tasting.color%>;'>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>aroma</b>
+								</td>
+								<td>
+									<%= tasting.adjs_aroma %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>taste</b>
+								</td>
+								<td>
+									<%= tasting.adjs_taste %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>aftertaste</b>
+								</td>
+								<td>
+									<%= tasting.adjs_aftertaste %>
+								</td>
+							</tr>
+						</table>
 					</td>
+					
 					<td>
-						<% @traits.each do |t| %>
-							<% if sort %>(<a href="#" onclick="sortByColumn('<%=t%>','desc')">+</a>/<a href="#" onclick="sortByColumn('<%=t%>','asc')">-</a>) <% end %>
-							<b><%= t %>:</b>
-							<%= pretty_trait(t, tasting[('trait_'+t).to_sym]) %><br />
-						<% end %>
+						<table class="noborder">
+							<% @traits.each do |t| %>
+								<tr>
+									<td>
+										<% if sort %>(<a href="#" onclick="sortByColumn('<%=t%>','desc')">+</a>/<a href="#" onclick="sortByColumn('<%=t%>','asc')">-</a>) <% end %>
+									</td>
+									<td>
+										<b><%= t %></b>
+									</td>
+									<td>
+										<%= pretty_trait(t, tasting[('trait_'+t).to_sym]) %><br />
+									</td>
+								</tr>							
+							<% end %>
+						</table>
 					</td>
+					
 					<% @traits.each do |t| %>
 					<td style="display: none;">
 						<%= tasting[('trait_'+t).to_sym] %>
@@ -71,19 +104,51 @@
 					<% end %>
 					
 			    <td>
-						<% if sort %>(<a href="#" onclick="sortByColumn('Drank On','desc')">+</a>/<a href="#" onclick="sortByColumn('Drank On','asc')">-</a>) <% end %>
-						<b>had on:</b> <%= tasting.drank_on %><br />
-			    	<b>had after:</b> <%= tasting.drank_after %><br />
-			    	<b>had with:</b> <%= tasting.drank_with %><br />
-						<b>would have again:</b> <%= tasting.drank_again %>
+						<table class="noborder">
+							<tr>
+								<td>
+									<b>had on</b>
+									<% if sort %>(<a href="#" onclick="sortByColumn('Drank On','desc')">+</a>/<a href="#" onclick="sortByColumn('Drank On','asc')">-</a>) <% end %> 
+								</td>
+								<td>
+									<%= tasting.drank_on %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>had after</b>
+								</td>
+								<td>
+									<%= tasting.drank_after %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>had with</b>
+								</td>
+								<td>
+									<%= tasting.drank_with %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>would have again</b>
+								</td>
+								<td>
+									<%= tasting.drank_again %>
+								</td>
+							</tr>
+						</table>
 					</td>
 					<td style="display: none;">
 						<%= tasting.drank_on %>
 					</td>
+					
+					
 					<td>
-						<%= link_to 'Duplicate', {:controller => 'tastings', :action => 'duplicate', :id => tasting.id } %> |
-						<%= link_to 'Edit', edit_tasting_path(tasting) %> | 
-						<%= link_to 'Delete', tasting, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+						<%= link_to 'duplicate', {:controller => 'tastings', :action => 'duplicate', :id => tasting.id } %> <br />
+						<%= link_to 'edit', edit_tasting_path(tasting) %> <br /> 
+						<%= link_to 'delete', tasting, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 					</td>
 			  </tr>
 			<% end %>

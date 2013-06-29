@@ -1,7 +1,8 @@
 module TastingsHelper
 
   def pretty_trait(trait, val)
-    descr = "[#{val}] " + case val
+    val_description = @trait_indices[trait.to_sym][val+3]
+    val_strength = case val
     when 0
        "undistinguished"
     when 1
@@ -19,12 +20,13 @@ module TastingsHelper
     else
       ""
     end
-    return descr + " (#{@trait_indices[trait.to_sym][val+3]})"
+    
+    return "(#{val}) - #{val_description}"
   end
   
   def pretty_rating(i)
     
-    return i ? "[#{i}] #{@rating_index[i-1]}" : ""
+    return i ? "(#{i}) - #{@rating_index[i-1]}" : ""
   end
   
 end

@@ -29,12 +29,6 @@
 		</tr>
 	</table>
 	
-	<h3>Initial rating</h3>
-  <div class="field">
-		Your first overall impression of the wine: &nbsp;
-    <%= f.select( :rating_first, (1..7).collect { |n| [pretty_rating(n), n] }) %>
-  </div>
-	
 	<h3>Color</h3>
 	<div class="field"> 
 		<table id="color_table">

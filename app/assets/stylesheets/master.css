@@ -79,6 +79,8 @@ label{
 	font-weight:bold;
 }
 
+/* === Charts === */
+
 
 /* === Tables === */
 
@@ -147,8 +149,10 @@ td.color_field a{
 
 /* === Column widths === */
 
+.width8 { width: 8%; }
 .width10 { width: 10%; }
 .width20 { width: 20%; }
+.width22 { width: 22%; }
 .width30 { width: 30%; }
 .width40 { width: 40%; }
 .width50 { width: 50%; }

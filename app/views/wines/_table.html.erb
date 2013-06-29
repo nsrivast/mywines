@@ -38,10 +38,10 @@
     <td><%= number_to_currency(wine.price, :precision => 0) %></td>
     <td><%= image_tag wine.photo.url(:thumb) %></td>
     <td>
-			<%= link_to 'Add a tasting',
-				{:controller => 'tastings', :action => 'new', :wine_id_preselect => wine.id} %> |
-			<%= link_to 'Edit', edit_wine_path(wine) %> |
-			<%= link_to 'Delete', wine, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+			<%= link_to 'taste',
+				{:controller => 'tastings', :action => 'new', :wine_id_preselect => wine.id} %> <br />
+			<%= link_to 'edit', edit_wine_path(wine) %> <br />
+			<%= link_to 'delete', wine, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 		</td>
   </tr>
 <% end %>
