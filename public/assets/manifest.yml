@@ -13,6 +13,8 @@ jquery-ui.js: jquery-ui-8905f2fe8395e41e3d5e94cccd266087.js
 jquery-ui/index.js: jquery-ui-8905f2fe8395e41e3d5e94cccd266087.js
 application.css: application-4645eefb9ccd679a70e8bbf38dd7af6a.css
 application/index.css: application-4645eefb9ccd679a70e8bbf38dd7af6a.css
+charts.css: charts-1b13569e9620782f423d4cd3ce931750.css
+charts/index.css: charts-1b13569e9620782f423d4cd3ce931750.css
 jquery-ui.css: jquery-ui-7d84d5f319902f1670e752e41cdc0848.css
 jquery-ui/index.css: jquery-ui-7d84d5f319902f1670e752e41cdc0848.css
 master.css: master-9d0a7a79b9d080f6647ab8002763cc38.css
