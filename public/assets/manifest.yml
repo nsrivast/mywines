@@ -7,6 +7,8 @@ dataTables.min.js: dataTables.min-642acc9c4699760f413154f0d02c2fc9.js
 dataTables/index.min.js: dataTables.min-642acc9c4699760f413154f0d02c2fc9.js
 defaults-ns.js: defaults-ns-c1bf36c973040a969edfd6925df056bb.js
 defaults-ns/index.js: defaults-ns-c1bf36c973040a969edfd6925df056bb.js
+highcharts.js: highcharts-b0b016f0dc294fb638769ccbe032b21e.js
+highcharts/index.js: highcharts-b0b016f0dc294fb638769ccbe032b21e.js
 jquery-1.1.1.min.js: jquery-1.1.1.min-d1c99fc867a5385897c0d98fb4b7c077.js
 jquery-1/index.1.1.min.js: jquery-1.1.1.min-d1c99fc867a5385897c0d98fb4b7c077.js
 jquery-ui.js: jquery-ui-8905f2fe8395e41e3d5e94cccd266087.js
