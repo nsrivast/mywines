@@ -21,21 +21,19 @@ var classificationTable = document.getElementById("wine_classification_table");
 document.getElementById("wine_vintage").value = "<%=@vintage%>";
 
 function addVarietal(v) {
-	  var rowCount = varietalTable.rows.length;
-	  var row = varietalTable.insertRow(rowCount);
-		var i = rowCount - 2; // ith varietal 
-		
-	  var cell0 = row.insertCell(0);
-		cell0.innerHTML = '<a onclick="useVarietal('+i+')" id="varietal'+i+'">'+v+'</a>'
+  var rowCount = varietalTable.rows.length;
+  var row = varietalTable.insertRow(rowCount);
+	var i = rowCount - 2; // ith varietal 
+	
+  var cell0 = row.insertCell(0);
+	cell0.innerHTML = '<a onclick="useVarietal('+i+')" id="varietal'+i+'">'+v+'</a>'
 }
 
-function useVarietal(i)
-{
+function useVarietal(i){
 	document.getElementById("wine_varietal").value = $("#varietal" + i).html();
 }
 
 function addClassification(vineyard, subregion, region, country) {
-
   var rowCount = classificationTable.rows.length;
   var row = classificationTable.insertRow(rowCount);
 	var i = rowCount - 2; // ith classification 
@@ -48,14 +46,11 @@ function addClassification(vineyard, subregion, region, country) {
 	cell2.innerHTML = '<a onclick="useRegion('+i+')" id="region'+i+'">'+region+'</a>'
 	var cell3 = row.insertCell(3);
 	cell3.innerHTML = '<a onclick="useCountry('+i+')" id="country'+i+'">'+country+'</a>'
-	
   var cell4 = row.insertCell(4);
 	cell4.innerHTML = '<a onclick="useClassification('+i+')">use all</a>'
-	
 }
 
-function useClassification(i)
-{
+function useClassification(i){
 	useVineyard(i);
 	useSubregion(i);
 	useRegion(i);

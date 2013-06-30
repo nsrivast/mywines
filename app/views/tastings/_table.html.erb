@@ -6,23 +6,22 @@
 <table id="tasting_table<%= search ? "" : "nosearch" %>">
 	
 	<thead>
-	<tr>
-    <% if show_wine %><th style="width:10%;"><a>Wine</a></th><% end %>
-    <% if show_user %><th style="width:7%;"><a>User</a></th><% end %>
-
-    <th style="width:8%;">Rating (1-7)</th>
-		
-    <th style="width:20%;">Color / Flavor</th>
-
-		<th style="width:25%;">Dimensions </th>
-		<% @traits.each do |trait| %>
-			<th style="display: none;"><%= trait %></th>
-		<% end %>
-
-    <th style="width:25%;">Setting</th>
-		<th style="display: none;">Drank On</th>
-    <th>Action</th>
-  </tr>	
+		<tr>
+	    <% if show_wine %><th style="width:10%;"><a>Wine</a></th><% end %>
+	    <% if show_user %><th style="width:7%;"><a>User</a></th><% end %>
+			
+	    <th style="width:8%;">Rating (1-7)</th>
+	    <th style="width:20%;">Color / Flavor</th>
+			<th style="width:25%;">Dimensions </th>
+			
+			<% @traits.each do |trait| %>
+				<th style="display: none;"><%= trait %></th>
+			<% end %>
+			
+	    <th style="width:25%;">Setting</th>
+			<th style="display: none;">Drank On</th>
+	    <th>Action</th>
+	  </tr>	
 	</thead>
 
 	<% unless tastings.nil? || tastings.length == 0 %>
@@ -144,7 +143,6 @@
 						<%= tasting.drank_on %>
 					</td>
 					
-					
 					<td>
 						<%= link_to 'duplicate', {:controller => 'tastings', :action => 'duplicate', :id => tasting.id } %> <br />
 						<%= link_to 'edit', edit_tasting_path(tasting) %> <br /> 
@@ -155,15 +153,17 @@
 		</tbody>
 	<% end %>
 		
-</table><br />
+</table>
+
+<br />
 
 <script>
-function sortByColumn(columnName,direction) {
-	var columnIndex = $('tr th').filter(
-	    function(){ return $(this).text() == columnName; }
-		).index();
+	function sortByColumn(columnName,direction) {
+		var columnIndex = $('tr th').filter(
+		    function(){ return $(this).text() == columnName; }
+			).index();
 
-	var tastingTable = $('#tasting_table').dataTable();	
-	tastingTable.fnSort([[columnIndex,direction]]);
-};
+		var tastingTable = $('#tasting_table').dataTable();	
+		tastingTable.fnSort([[columnIndex,direction]]);
+	};
 </script>

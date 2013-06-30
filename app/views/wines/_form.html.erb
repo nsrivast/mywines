@@ -8,7 +8,7 @@
   <% if @wine.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
-
+			
       <ul>
       <% @wine.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -39,16 +39,8 @@
 	
   
 	<table id="wine_varietal_table">
-		<thead>
-			<tr>
-				<th><%= f.label :varietal %></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><%= f.text_field :varietal %></td>
-			</tr>
-		</tbody>
+		<thead><tr><th><%= f.label :varietal %></th></tr></thead>
+		<tbody><tr><td><%= f.text_field :varietal %></td></tr></tbody>
 	</table>
 	
 	<br />
@@ -96,40 +88,40 @@
 
 <script type="text/javascript">
 
-var VINEYARDS = <%=raw(@vineyards_js)%>
-var SUBREGIONS = <%=raw(@subregions_js)%>
-var REGIONS = <%=raw(@regions_js)%>
-var COUNTRIES = <%=raw(@countries_js)%>
-var VARIETALS = ["Aglianico", "Albarino", "Ansonica", "Arinto", "Arneis", "Barbera", "Cabernet Franc", "Cabernet Sauvignon", "Cannonau", "Carignane", "Carinena", "Carmenere", "Catawba", "Chardonnay", "Chasellas", "Chenin Blanc", "Cinsaut", "Cortese", "Corvina", "Counoise", "Dolcetto", "Ehrenfelser", "Fiano", "Folle Blanc", "Freisa", "Furmint", "Gamay", "Gewurztraminer", "Grechetto", "Grenache", "Kerner", "Lagrein", "Macebeo", "Malbec", "Malvasia", "Marsanne", "Mazuela", "Melon", "Merlot", "Montepulciano", "Moscato", "Mourvedre", "Muller-Thurgau", "Muscadet", "Muscat", "Nebbiolo", "Negroamaro", "Palomino", "Parellada", "Pedro Ximenez", "Petite Cabernet", "Petite Verdot", "Petite Vidure", "Petite Vidure", "Pinot Bianco", "Pinot Blanc", "Pinot Grigio", "Pinot Gris", "Pinot Meunier", "Pinot Noir", "Primitivo", "Prugnolo", "Rousanne", "Sangiovese", "Sauvignon Blanc", "Savagnin", "Scheurebe", "Schiava", "Semillion", "Seyval Blanc", "Sylvaner", "Syrah", "Temperanillo", "Traminer", "Trebbiano", "Ugni Blanc", "Verdiccio", "Vernaccia", "Viognier", "Viura", "Welschriesling", "Zinfandel"];
+	var VINEYARDS = <%=raw(@vineyards_js)%>
+	var SUBREGIONS = <%=raw(@subregions_js)%>
+	var REGIONS = <%=raw(@regions_js)%>
+	var COUNTRIES = <%=raw(@countries_js)%>
+	var VARIETALS = ["Aglianico", "Albarino", "Ansonica", "Arinto", "Arneis", "Barbera", "Cabernet Franc", "Cabernet Sauvignon", "Cannonau", "Carignane", "Carinena", "Carmenere", "Catawba", "Chardonnay", "Chasellas", "Chenin Blanc", "Cinsaut", "Cortese", "Corvina", "Counoise", "Dolcetto", "Ehrenfelser", "Fiano", "Folle Blanc", "Freisa", "Furmint", "Gamay", "Gewurztraminer", "Grechetto", "Grenache", "Kerner", "Lagrein", "Macebeo", "Malbec", "Malvasia", "Marsanne", "Mazuela", "Melon", "Merlot", "Montepulciano", "Moscato", "Mourvedre", "Muller-Thurgau", "Muscadet", "Muscat", "Nebbiolo", "Negroamaro", "Palomino", "Parellada", "Pedro Ximenez", "Petite Cabernet", "Petite Verdot", "Petite Vidure", "Petite Vidure", "Pinot Bianco", "Pinot Blanc", "Pinot Grigio", "Pinot Gris", "Pinot Meunier", "Pinot Noir", "Primitivo", "Prugnolo", "Rousanne", "Sangiovese", "Sauvignon Blanc", "Savagnin", "Scheurebe", "Schiava", "Semillion", "Seyval Blanc", "Sylvaner", "Syrah", "Temperanillo", "Traminer", "Trebbiano", "Ugni Blanc", "Verdiccio", "Vernaccia", "Viognier", "Viura", "Welschriesling", "Zinfandel"];
 
-// copies name from [main wine form] to [guess form] before running guess method
-function beforeGuessing() {
-	document.getElementById('input_name').value= document.getElementById('wine_name').value;
+	// copies name from [main wine form] to [guess form] before running guess method
+	function beforeGuessing() {
+		document.getElementById('input_name').value= document.getElementById('wine_name').value;
 
-	// remove previous varietals, classifications
-	var varietalTable = document.getElementById("wine_varietal_table");
-	var classificationTable = document.getElementById("wine_classification_table");
-	while (varietalTable.rows.length > 2) {
-		varietalTable.deleteRow(2)
-	};
-	while (classificationTable.rows.length > 2) {
-		classificationTable.deleteRow(2)
-	};
-}
+		// remove previous varietals, classifications
+		var varietalTable = document.getElementById("wine_varietal_table");
+		var classificationTable = document.getElementById("wine_classification_table");
+		while (varietalTable.rows.length > 2) {
+			varietalTable.deleteRow(2)
+		};
+		while (classificationTable.rows.length > 2) {
+			classificationTable.deleteRow(2)
+		};
+	}
 
-// autocomplete for country, region, subregion, vineyard, varietal
-$(function() {
-  $( "#wine_country" ).autocomplete({ source: COUNTRIES });
-  $( "#wine_region" ).autocomplete({ source: REGIONS });
-  $( "#wine_subregion" ).autocomplete({ source: SUBREGIONS });
-  $( "#wine_vineyard" ).autocomplete({ source: VINEYARDS });
+	// autocomplete for country, region, subregion, vineyard, varietal
+	$(function() {
+	  $( "#wine_country" ).autocomplete({ source: COUNTRIES });
+	  $( "#wine_region" ).autocomplete({ source: REGIONS });
+	  $( "#wine_subregion" ).autocomplete({ source: SUBREGIONS });
+	  $( "#wine_vineyard" ).autocomplete({ source: VINEYARDS });
 
-	$( "#wine_varietal" )
-		.bind( "keydown", keepInWindow)
-		.autocomplete( $.extend( autocompleteOptions,
-				{source: sourceFunction(VARIETALS)}
-			)
-		)  
-});
+		$( "#wine_varietal" )
+			.bind( "keydown", keepInWindow)
+			.autocomplete( $.extend( autocompleteOptions,
+					{source: sourceFunction(VARIETALS)}
+				)
+			)  
+	});
 
 </script>

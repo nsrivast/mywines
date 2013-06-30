@@ -1,42 +1,61 @@
-<p id="notice"><%= notice %></p>
-	<% v = @wine.vineyard %>
-	<% s = v.subregion %>
-	<% r = s.region %>
-	<% c = r.country%>
+<p id="notice">
+	<%= notice %>
+</p>
+
+<% v = @wine.vineyard %>
+<% s = v.subregion %>
+<% r = s.region %>
+<% c = r.country%>
 
 <p>
-  <b>Name:</b> <%= @wine.name %>
+  <b>Name:</b> 
+	<%= @wine.name %>
 </p>
 <p>
-  <b>Country:</b> <%= link_to c.name, :controller => 'classification', :action => 'show', :id => c.id, :type => c.class.to_s %>
+  <b>Country:</b> 
+	<%= link_to c.name, :controller => 'classification', :action => 'show', 
+		:id => c.id, :type => c.class.to_s %>
 </p>
 <p>
-  <b>Region:</b> <%= link_to r.name, :controller => 'classification', :action => 'show', :id => r.id, :type => r.class.to_s %>
+  <b>Region:</b> 
+	<%= link_to r.name, :controller => 'classification', :action => 'show', 
+		:id => r.id, :type => r.class.to_s %>
 </p>
 <p>
-  <b>Subregion:</b> <%= link_to s.name, :controller => 'classification', :action => 'show', :id => s.id, :type => s.class.to_s %>
+  <b>Subregion:</b> 
+	<%= link_to s.name, :controller => 'classification', :action => 'show', 
+		:id => s.id, :type => s.class.to_s %>
 </p>
 <p>
-  <b>Vineyard:</b> <%= link_to v.name, :controller => 'classification', :action => 'show', :id => v.id, :type => v.class.to_s %>
+  <b>Vineyard:</b> 
+	<%= link_to v.name, :controller => 'classification', :action => 'show', 
+		:id => v.id, :type => v.class.to_s %>
 </p>
 <p>
-  <b>Vintage:</b> <%= @wine.vintage %>
+  <b>Vintage:</b> 
+	<%= @wine.vintage %>
 </p>
 <p>
-  <b>Varietal:</b> <%= @wine.varietal %>
+  <b>Varietal:</b> 
+	<%= @wine.varietal %>
 </p>
 <p>
-  <b>Price:</b> <%= number_to_currency(@wine.price, :precision => 0) %>
+  <b>Price:</b> 
+	<%= number_to_currency(@wine.price, :precision => 0) %>
 </p>
 <p>
-  <b>Photo:</b> <%= image_tag @wine.photo.url %>
+  <b>Photo:</b> 
+	<%= image_tag @wine.photo.url %>
 </p>
 
 <% if @wine.tastings.length == 0 %>
-This wine has not yet been reviewed. <%= link_to 'Click here', {:controller => 'tastings', :action => 'new', :wine_id_preselect => @wine.id} %> to add a tasting.<br /><br />
+	This wine has not yet been reviewed. 
+	<%= link_to 'Click here', {:controller => 'tastings', :action => 'new', 
+		:wine_id_preselect => @wine.id} %> to add a tasting.<br /><br />
 <% else %>
-<h3>List of tastings</h3>
-<%= render :partial => 'tastings/table', :locals => {:tastings => @wine.tastings, :show_wine => false} %>
+	<h3>List of tastings</h3>
+	<%= render :partial => 'tastings/table', 
+		:locals => {:tastings => @wine.tastings, :show_wine => false} %>
 <% end %>
  
 <%= link_to 'Edit wine', edit_wine_path(@wine) %> |
