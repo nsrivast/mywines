@@ -84,10 +84,10 @@
 							<% @traits.each do |t| %>
 								<tr>
 									<td>
-										<% if sort %>(<a href="#" onclick="sortByColumn('<%=t%>','desc')">+</a>/<a href="#" onclick="sortByColumn('<%=t%>','asc')">-</a>) <% end %>
-									</td>
-									<td>
 										<b><%= t %></b>
+										<% if sort %>
+											<a href="#" onclick="sortByColumn('<%=t%>','desc')">+</a>/<a href="#" onclick="sortByColumn('<%=t%>','asc')">-</a>
+										<% end %>
 									</td>
 									<td>
 										<%= pretty_trait(t, tasting[('trait_'+t).to_sym]) %><br />
@@ -106,7 +106,7 @@
 			    <td>
 						<table class="noborder">
 							<tr>
-								<td>
+								<td style="white-space:nowrap;">
 									<b>had on</b>
 									<% if sort %>(<a href="#" onclick="sortByColumn('Drank On','desc')">+</a>/<a href="#" onclick="sortByColumn('Drank On','asc')">-</a>) <% end %> 
 								</td>
@@ -132,7 +132,7 @@
 							</tr>
 							<tr>
 								<td>
-									<b>would have again</b>
+									<b>have again?</b>
 								</td>
 								<td>
 									<%= tasting.drank_again %>

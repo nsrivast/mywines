@@ -2,7 +2,9 @@
 
 Latitude: <%= @obj.lat %><br />
 Longitude: <%= @obj.lng %><br />
-Belongs to user: <%= @obj.user.name %><br />
+<% if @obj.user %>
+	Belongs to user: <%= @obj.user.name %><br />
+<% end %>
 <% if @parent %>
 	Belongs to <%= @parent.class %>: <%= link_to @parent.name, :action => 'show', :id => @parent.id, :type => @parent.class %><br /><br />
 <% end %>

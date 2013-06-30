@@ -21,12 +21,12 @@ module TastingsHelper
       ""
     end
     
-    return "(#{val}) - #{val_description}"
+    return "#{val}: #{val_description}"
   end
   
   def pretty_rating(i)
     
-    return i ? "(#{i}) - #{@rating_index[i-1]}" : ""
+    return i ? "#{i}: #{@rating_index[i-1]}" : ""
   end
   
 end

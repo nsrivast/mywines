@@ -72,7 +72,7 @@ class ChartsController < ApplicationController
             :name => t.wine.name,
             :click_name => t.wine.pretty_name,
             :id => t.wine.id,
-            :x => t["trait_#{trait}"],
+            :x => t["trait_#{trait}"] + (Random.rand - 0.5)/2,
             :y => t.wine.avg_rating
           }
         }
