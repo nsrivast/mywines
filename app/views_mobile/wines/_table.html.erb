@@ -1,0 +1,63 @@
+<table id="wine_table">
+	
+	<thead>
+	  <tr>
+	    <th><a>Name</a></th>
+			<th><a>Avg Rating</a></th>
+		
+	    <th><a>Vineyard</a></th>
+	    <th><a>Subregion</a></th>
+	    <th><a>Region</a></th>
+	    <th><a>Country</a></th>
+    
+			<th><a>Vintage</a></th>
+			<th><a>Varietal</a></th>
+	    <th><a>Price</a></th>
+	    <th><a>Photo</a></th>
+	    <th><a>Actions</a></th>
+	  </tr>
+	</thead>
+
+	<tbody>
+		<% wines.each do |wine| %>
+			<% v = wine.vineyard %>
+			<% s = v.subregion %>
+			<% r = s.region %>
+			<% c = r.country%>
+
+		  <tr>
+		    <td><%= link_to wine.name, wine %></td>
+				<td><%= wine.avg_rating ? wine.avg_rating : "no tastings" %></td>
+
+		    <td>
+					<%= link_to v.name, :controller => 'classification', :action => 'show', 
+						:id => v.id, :type => v.class.to_s %>
+				</td>
+		    <td>
+					<%= link_to s.name, :controller => 'classification', :action => 'show', 
+						:id => s.id, :type => s.class.to_s %>
+				</td>
+		    <td>
+					<%= link_to r.name, :controller => 'classification', :action => 'show', 
+						:id => r.id, :type => r.class.to_s %>
+				</td>
+		    <td>
+					<%= link_to c.name, :controller => 'classification', :action => 'show', 
+						:id => c.id, :type => c.class.to_s %>
+				</td>
+    
+		    <td><%= wine.vintage %></td>
+		    <td><%= wine.varietal %></td>
+		    <td><%= number_to_currency(wine.price, :precision => 0) %></td>
+		    <td><%= image_tag wine.photo.url(:thumb) %></td>
+		    <td>
+					<%= link_to 'taste',
+						{:controller => 'tastings', :action => 'new', :wine_id_preselect => wine.id} %> <br />
+					<%= link_to 'edit', edit_wine_path(wine) %> <br />
+					<%= link_to 'delete', wine, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+				</td>
+		  </tr>
+		<% end %>
+	</tbody>
+	
+</table>

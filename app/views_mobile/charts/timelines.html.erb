@@ -1,0 +1,86 @@
+<script>
+	var legendOptions = {
+		enabled: false
+	};
+
+	var plotOptions = {
+		series: {
+	    marker: {
+	        radius: 7,
+					symbol: 'circle'
+	    }
+	  }
+	}
+</script>
+			
+
+<div class="field">
+	<%= link_to "timelines", :action => "timelines" %> |
+	<%= link_to "traits", :action => "traits" %> |
+	<%= link_to "counts", :action => "counts" %>
+</div>
+
+<% @charts.each do |chart| %>
+
+	<div class="field">
+		<div id="<%=chart[:name]%>_chart" style="width:60%; height:400px;">
+		</div>
+	</div>
+
+	<script>
+		$(function () {
+	    $("#<%=chart[:name]%>_chart").highcharts({
+	      chart: {
+	          type: 'scatter'
+	      },
+				colors: ['#2f7ed8'],
+	      title: {
+	          text: "<%=chart[:title]%>"
+	      },
+	      subtitle: {
+	          text: "<%=chart[:subtitle]%>"
+	      },
+	      xAxis: {
+	          title: {
+	              enabled: true,
+	              text: "<%=chart[:x_axis]%>"
+	          },
+						<% if chart[:datetime] %> 
+							type: 'datetime', 
+							tickInterval: 30 * 24 * 3600 * 1000, // one month
+						<% end %>
+	          startOnTick: true,
+	          endOnTick: true,
+	          showLastLabel: true
+	      },
+	      yAxis: {
+	          title: {
+	              text: "<%=chart[:y_axis]%>"
+	          }
+	      },
+	      legend: legendOptions,
+	      tooltip: {
+	          formatter: function() {
+							var topline = '<b>' + this.series.name + '</b>'
+							var bottomline = '(' + this.x + ', ' + this.y + ' rating)'
+	            return this.series.options.label;
+	          }
+	      },
+	      plotOptions: plotOptions,
+	      series: [
+				<% chart[:data].each do |d| %>
+					<% d_x = chart[:datetime] ? d[:x].to_datetime.to_i*1000 : d[:x] %>    
+					{
+		          name: "<%=d[:name]%>",
+							data: [[<%= d_x %>, <%= d[:y] %>]],
+							label: "<b><%=d[:name]%></b><br />(<%=d[:x]%>, <%=d[:y]%>)",
+		      },
+				<% end %>
+				]
+	    });
+	  });
+
+	</script>
+
+<% end %>
+

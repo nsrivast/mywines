@@ -1,4 +1,6 @@
 class ChartsController < ApplicationController
+  before_filter :check_for_mobile
+  
   
   def timelines
     tastings = User.find_by_id(1).tastings

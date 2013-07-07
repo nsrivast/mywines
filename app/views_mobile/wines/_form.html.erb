@@ -1,0 +1,127 @@
+
+<%= form_tag('/wines/guesser', :remote => true) %>
+	<%= hidden_field_tag 'input_name' %>
+	<input id="guessButton" onclick="beforeGuessing()" name="commit" type="submit" value="Click here" /> to guess values from the name.
+</form>
+
+<%= form_for(@wine) do |f| %>
+  <% if @wine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+			
+      <ul>
+      <% @wine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  	
+	<div class="field">
+		<table class="noborder">
+		  <tr>
+		    <td><%= f.label :name %></td><td><%= f.text_field :name, :size => 100 %></td>
+		  </tr>
+		  <tr>
+		    <td><%= f.label :price %></td><td><%= f.text_field :price, :size => 5 %></td>
+		  </tr>
+		  <tr>
+		    <td><%= f.label :purchased %></td><td><%= f.text_field :purchased, :size => 100 %></td>
+		  </tr>
+		  <tr>
+		    <td><%= f.label :photo %></td><td><%= f.file_field :photo %></td>
+		  </tr>
+		  <tr>
+		    <td><%= f.label :vintage %></td><td> <%= f.number_field :vintage %></td>
+		  </tr>
+		</table>
+	</div>
+	
+  
+	<table id="wine_varietal_table">
+		<thead><tr><th><%= f.label :varietal %></th></tr></thead>
+		<tbody><tr><td><%= f.text_field :varietal %></td></tr></tbody>
+	</table>
+	
+	<br />
+	
+  <table id="wine_classification_table">
+		<thead>
+			<tr>
+				<th><%= f.label :vineyard %></th>
+	      <th><%= f.label :subregion %></th>
+	      <th><%= f.label :region %></th>
+	      <th><%= f.label :country %></th>
+				<th></th>
+	    </tr>
+		</thead>
+	
+		<tbody>
+			<tr>
+				<td>
+					<input id="wine_vineyard" name="wine[vineyard]" 
+					value="<%=(@heritage ? @heritage[:vineyard] : "" )%>" size="30" type="text">
+				</td>
+				<td>
+					<input id="wine_subregion" name="wine[subregion]" 
+					value="<%=(@heritage ? @heritage[:subregion] : "" )%>" size="30" type="text">
+				</td>
+				<td>
+					<input id="wine_region" name="wine[region]" 
+					value="<%=(@heritage ? @heritage[:region] : "" )%>" size="30" type="text">
+				</td>
+				<td>
+					<input id="wine_country" name="wine[country]" 
+					value="<%=(@heritage ? @heritage[:country] : "" )%>" size="30" type="text">
+				</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+
+	var VINEYARDS = <%=raw(@vineyards_js)%>
+	var SUBREGIONS = <%=raw(@subregions_js)%>
+	var REGIONS = <%=raw(@regions_js)%>
+	var COUNTRIES = <%=raw(@countries_js)%>
+	var VARIETALS = ["Aglianico", "Albarino", "Ansonica", "Arinto", "Arneis", "Barbera", "Cabernet Franc", "Cabernet Sauvignon", "Cannonau", "Carignane", "Carinena", "Carmenere", "Catawba", "Chardonnay", "Chasellas", "Chenin Blanc", "Cinsaut", "Cortese", "Corvina", "Counoise", "Dolcetto", "Ehrenfelser", "Fiano", "Folle Blanc", "Freisa", "Furmint", "Gamay", "Gewurztraminer", "Grechetto", "Grenache", "Kerner", "Lagrein", "Macebeo", "Malbec", "Malvasia", "Marsanne", "Mazuela", "Melon", "Merlot", "Montepulciano", "Moscato", "Mourvedre", "Muller-Thurgau", "Muscadet", "Muscat", "Nebbiolo", "Negroamaro", "Palomino", "Parellada", "Pedro Ximenez", "Petite Cabernet", "Petite Verdot", "Petite Vidure", "Petite Vidure", "Pinot Bianco", "Pinot Blanc", "Pinot Grigio", "Pinot Gris", "Pinot Meunier", "Pinot Noir", "Primitivo", "Prugnolo", "Rousanne", "Sangiovese", "Sauvignon Blanc", "Savagnin", "Scheurebe", "Schiava", "Semillion", "Seyval Blanc", "Sylvaner", "Syrah", "Temperanillo", "Traminer", "Trebbiano", "Ugni Blanc", "Verdiccio", "Vernaccia", "Viognier", "Viura", "Welschriesling", "Zinfandel"];
+
+	// copies name from [main wine form] to [guess form] before running guess method
+	function beforeGuessing() {
+		document.getElementById('input_name').value= document.getElementById('wine_name').value;
+
+		// remove previous varietals, classifications
+		var varietalTable = document.getElementById("wine_varietal_table");
+		var classificationTable = document.getElementById("wine_classification_table");
+		while (varietalTable.rows.length > 2) {
+			varietalTable.deleteRow(2)
+		};
+		while (classificationTable.rows.length > 2) {
+			classificationTable.deleteRow(2)
+		};
+	}
+
+	// autocomplete for country, region, subregion, vineyard, varietal
+	$(function() {
+	  $( "#wine_country" ).autocomplete({ source: COUNTRIES });
+	  $( "#wine_region" ).autocomplete({ source: REGIONS });
+	  $( "#wine_subregion" ).autocomplete({ source: SUBREGIONS });
+	  $( "#wine_vineyard" ).autocomplete({ source: VINEYARDS });
+
+		$( "#wine_varietal" )
+			.bind( "keydown", keepInWindow)
+			.autocomplete( $.extend( autocompleteOptions,
+					{source: sourceFunction(VARIETALS)}
+				)
+			)  
+	});
+
+</script>

@@ -122,8 +122,8 @@ class WinesController < ApplicationController
     end
     
     respond_to do |format|
-      format.html{ render :layout => false }
-      format.js{ render :layout => false }
+      format.html{ render :partial => '/wines/guesser.js.erb', :layout => false }
+      format.js{ render :partial => '/wines/guesser.js.erb', :layout => false }
     end
   end
   

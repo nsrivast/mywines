@@ -1,0 +1,169 @@
+<% show_user = (show_user == false) ? false : true %>
+<% show_wine = (show_wine == false) ? false : true %>
+<% search = (search == true) ? true : false %>
+<% sort = (sort == true) ? true : false %>
+
+<table id="tasting_table<%= search ? "" : "nosearch" %>">
+	
+	<thead>
+		<tr>
+	    <% if show_wine %><th style="width:10%;"><a>Wine</a></th><% end %>
+	    <% if show_user %><th style="width:7%;"><a>User</a></th><% end %>
+			
+	    <th style="width:8%;">Rating (1-7)</th>
+	    <th style="width:20%;">Color / Flavor</th>
+			<th style="width:25%;">Dimensions </th>
+			
+			<% @traits.each do |trait| %>
+				<th style="display: none;"><%= trait %></th>
+			<% end %>
+			
+	    <th style="width:25%;">Setting</th>
+			<th style="display: none;">Drank On</th>
+	    <th>Action</th>
+	  </tr>	
+	</thead>
+
+	<% unless tastings.nil? || tastings.length == 0 %>
+		<tbody>
+			<% tastings.each do |tasting| %>
+			  <tr>
+					<% if show_wine && %>
+						<td><%= link_to tasting.wine.name, tasting.wine %></td>
+					<% end %>
+					<% if show_user %>
+						<td><%= link_to tasting.user.name, tasting.user %></td>
+					<% end %>
+
+			    <td>
+						<%= pretty_rating(tasting.rating_final) %>
+					</td>
+
+			    <td>
+						<table class="noborder">
+							<tr>
+								<td>
+									<b>color</b>
+								</td>
+								<td>
+									<span style='background-color: #<%=tasting.color%>;'>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>aroma</b>
+								</td>
+								<td>
+									<%= tasting.adjs_aroma %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>taste</b>
+								</td>
+								<td>
+									<%= tasting.adjs_taste %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>aftertaste</b>
+								</td>
+								<td>
+									<%= tasting.adjs_aftertaste %>
+								</td>
+							</tr>
+						</table>
+					</td>
+					
+					<td>
+						<table class="noborder">
+							<% @traits.each do |t| %>
+								<tr>
+									<td>
+										<b><%= t %></b>
+										<% if sort %>
+											<a href="#" onclick="sortByColumn('<%=t%>','desc')">+</a>/<a href="#" onclick="sortByColumn('<%=t%>','asc')">-</a>
+										<% end %>
+									</td>
+									<td>
+										<%= pretty_trait(t, tasting[('trait_'+t).to_sym]) %><br />
+									</td>
+								</tr>							
+							<% end %>
+						</table>
+					</td>
+					
+					<% @traits.each do |t| %>
+					<td style="display: none;">
+						<%= tasting[('trait_'+t).to_sym] %>
+					</td>	
+					<% end %>
+					
+			    <td>
+						<table class="noborder">
+							<tr>
+								<td style="white-space:nowrap;">
+									<b>had on</b>
+									<% if sort %>(<a href="#" onclick="sortByColumn('Drank On','desc')">+</a>/<a href="#" onclick="sortByColumn('Drank On','asc')">-</a>) <% end %> 
+								</td>
+								<td>
+									<%= tasting.drank_on %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>had after</b>
+								</td>
+								<td>
+									<%= tasting.drank_after %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>had with</b>
+								</td>
+								<td>
+									<%= tasting.drank_with %>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>have again?</b>
+								</td>
+								<td>
+									<%= tasting.drank_again %>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td style="display: none;">
+						<%= tasting.drank_on %>
+					</td>
+					
+					<td>
+						<%= link_to 'duplicate', {:controller => 'tastings', :action => 'duplicate', :id => tasting.id } %> <br />
+						<%= link_to 'edit', edit_tasting_path(tasting) %> <br /> 
+						<%= link_to 'delete', tasting, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+					</td>
+			  </tr>
+			<% end %>
+		</tbody>
+	<% end %>
+		
+</table>
+
+<br />
+
+<script>
+	function sortByColumn(columnName,direction) {
+		var columnIndex = $('tr th').filter(
+		    function(){ return $(this).text() == columnName; }
+			).index();
+
+		var tastingTable = $('#tasting_table').dataTable();	
+		tastingTable.fnSort([[columnIndex,direction]]);
+	};
+</script>
