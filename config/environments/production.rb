@@ -1,6 +1,6 @@
 Mywines::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.assets.precompile += %w{ application.js jquery-1.1.1.min.js jquery-ui.js dataTables.min.js defaults-ns.js highcharts.js application.css jquery-ui.css master.css charts.css}
+  config.assets.precompile += %w{ application.js jquery-1.1.1.min.js jquery-ui.js dataTables.min.js defaults-ns.js highcharts.js ratchet.js application.css jquery-ui.css master.css charts.css ratchet.css}
 
   # Code is not reloaded between requests
   config.cache_classes = true
