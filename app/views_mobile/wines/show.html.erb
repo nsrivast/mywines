@@ -1,70 +1,79 @@
 <div class="bar-standard bar-header-secondary">
-  <a class="button-block">Wine details</a>
+	<h3>
+		Wine details &nbsp; &nbsp; &nbsp;
+		<button class="btn btn-positive"> 
+			<%= link_to 'Edit wine', edit_wine_path(@wine) %> 
+		</button> &nbsp; &nbsp; &nbsp;
+		<button class="btn btn-positive"> 
+			<%= link_to 'Add tasting', {:controller => 'tastings', :action => 'new', :wine_id_preselect => @wine.id} %>
+		</button> 		
+	</h3>
 </div>
 
 <div class="content">
-
 	<p id="notice">
 		<%= notice %>
 	</p>
-
+	
 	<% v = @wine.vineyard %>
 	<% s = v.subregion %>
 	<% r = s.region %>
 	<% c = r.country%>
 
-	<p>
-	  <b>Name:</b> 
-		<%= @wine.name %>
-	</p>
-	<p>
-	  <b>Country:</b> 
-		<%= link_to c.name, :controller => 'classification', :action => 'show', 
-			:id => c.id, :type => c.class.to_s %>
-	</p>
-	<p>
-	  <b>Region:</b> 
-		<%= link_to r.name, :controller => 'classification', :action => 'show', 
-			:id => r.id, :type => r.class.to_s %>
-	</p>
-	<p>
-	  <b>Subregion:</b> 
-		<%= link_to s.name, :controller => 'classification', :action => 'show', 
-			:id => s.id, :type => s.class.to_s %>
-	</p>
-	<p>
-	  <b>Vineyard:</b> 
-		<%= link_to v.name, :controller => 'classification', :action => 'show', 
-			:id => v.id, :type => v.class.to_s %>
-	</p>
-	<p>
-	  <b>Vintage:</b> 
-		<%= @wine.vintage %>
-	</p>
-	<p>
-	  <b>Varietal:</b> 
-		<%= @wine.varietal %>
-	</p>
-	<p>
-	  <b>Price:</b> 
-		<%= number_to_currency(@wine.price, :precision => 0) %>
-	</p>
-	<p>
-	  <b>Photo:</b> 
-		<%= image_tag @wine.photo.url %>
-	</p>
+	<ul class="table-view">
+	  <li class="table-view-cell">
+			<b>Name:</b>
+			<%= @wine.name %>
+		</li>
+	  <li class="table-view-divider">Geography</li>
+	  <li class="table-view-cell">
+		  <b>Country:</b> 
+			<%= link_to c.name, :controller => 'classification', :action => 'show', 
+				:id => c.id, :type => c.class.to_s %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Region:</b> 
+			<%= link_to r.name, :controller => 'classification', :action => 'show', 
+				:id => r.id, :type => r.class.to_s %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Subregion:</b> 
+			<%= link_to s.name, :controller => 'classification', :action => 'show', 
+				:id => s.id, :type => s.class.to_s %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Vineyard:</b> 
+			<%= link_to v.name, :controller => 'classification', :action => 'show', 
+				:id => v.id, :type => v.class.to_s %>
+	  </li>
+	  <li class="table-view-divider">Other</li>
+	  <li class="table-view-cell">
+		  <b>Vintage:</b> 
+			<%= @wine.vintage %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Varietal:</b> 
+			<%= @wine.varietal %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Price:</b> 
+			<%= number_to_currency(@wine.price, :precision => 0) %>
+	  </li>
+	  <li class="table-view-cell">
+	  </li>
 
-	<% if @wine.tastings.length == 0 %>
-		This wine has not yet been reviewed. 
-		<%= link_to 'Click here', {:controller => 'tastings', :action => 'new', 
-			:wine_id_preselect => @wine.id} %> to add a tasting.<br /><br />
-	<% else %>
-		<h3>List of tastings</h3>
-		<%= render :partial => 'tastings/table', 
-			:locals => {:tastings => @wine.tastings, :show_wine => false} %>
-	<% end %>
- 
-	<%= link_to 'Edit wine', edit_wine_path(@wine) %> |
-	<%= link_to 'See all wines', wines_path %>
-	
+
+		<% if @wine.tastings.length == 0 %>
+			<li class="table-view-divider">
+				No tastings. &nbsp; &nbsp; &nbsp;
+				<button class="btn btn-positive"> 
+					<%= link_to 'Add tasting', {:controller => 'tastings', :action => 'new', :wine_id_preselect => @wine.id} %>
+				</button>
+			</li>
+		<% else %>
+			<%= render :partial => 'tastings/table', 
+				:locals => {:tastings => @wine.tastings, :show_wine => false} %>
+		<% end %>		
+	</ul>
 </div>
+

@@ -1,5 +1,92 @@
-<p id="notice"><%= notice %></p>
+<div class="bar-standard bar-header-secondary">
+	<h3>
+		Tasting details &nbsp; &nbsp; &nbsp;
+		<button class="btn btn-positive"> 
+			<%= link_to 'Edit tasting', edit_tasting_path(@tasting) %> 
+		</button>
+	</h3>
+</div>
 
-<%= render :partial => 'tastings/table', :locals => {:tastings => [@tasting], :no_search => true}%>
 
-<%= link_to 'Back to all tastings', tastings_path %>
+<div class="content">
+	<p id="notice">
+		<%= notice %>
+	</p>
+	
+	<ul class="table-view">
+	  <li class="table-view-cell">
+			<b>Wine:</b>
+			<%= @tasting.wine.name %>
+		</li>
+	  <li class="table-view-cell">
+			<b>User:</b>
+			<%= @tasting.user.name %>
+		</li>
+	  <li class="table-view-cell">
+			<b>Rating:</b>
+			<%= @tasting.rating_final %>
+		</li>
+		
+	  <li class="table-view-divider">Color/Flavor</li>
+	  <li class="table-view-cell">
+		  <b>Color:</b> 
+			<span style='background-color: #<%=@tasting.color%>;'>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Aroma:</b> 
+			<%= @tasting.adjs_aroma %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Taste:</b> 
+			<%= @tasting.adjs_taste %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Aftertaste:</b> 
+			<%= @tasting.adjs_aftertaste %>
+	  </li>
+                                        
+	  <li class="table-view-divider">Dimensions</li>
+    <% @traits.each do |t| %>
+		  <li class="table-view-cell">
+				<b><%= pretty_trait(t, @tasting[('trait_'+t).to_sym]) %></b>
+				<%= @tasting[('trait_'+t).to_sym] %>
+		  </li>
+		<% end %>
+
+	  <li class="table-view-divider">Setting</li>
+	  <li class="table-view-cell">
+		  <b>Had on:</b> 
+			<%= @tasting.drank_on %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Had after:</b> 
+			<%= @tasting.drank_after %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Had with:</b> 
+			<%= @tasting.drank_with %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Have again:</b> 
+			<%= @tasting.drank_again %>
+	  </li>
+
+	  <li class="table-view-divider">Actions</li>
+	  <li class="table-view-cell">
+		  <b>Duplicate:</b> 
+			<%= link_to 'duplicate', {:controller => 'tastings', :action => 'duplicate', :id => @tasting.id } %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Edit:</b> 
+			<%= link_to 'edit', edit_tasting_path(@tasting) %>
+	  </li>
+	  <li class="table-view-cell">
+		  <b>Delete:</b> 
+			<%= link_to 'delete', @tasting, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+	  </li>
+		
+	</ul>
+</div>
+			
+		
+ 

@@ -14,114 +14,30 @@
       </ul>
     </div>
   <% end %>
-	
-	<div class="field">
-		<table class="noborder">
-			<tr>
-				<td>
-					Select user:
-				</td>
-				<td>
-					<%= f.select( :user_id, @users.collect{ |u| [u.name, u.id] } ) %>
-					<% if @users.nil? || @users.length == 0 %>
-						No users exist yet! <%= link_to 'Click here', new_user_path %> to add one.
-					<% end %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Select wine:
-				</td>
-				<td>
-					<%= f.select( :wine_id, @wines.collect{ |w| [w.name, w.id] } ) %>
-					<% if @wines.nil? || @wines.length == 0 %>
-						No wines exist yet! <%= link_to 'Click here', new_wine_path %> to add one.
-					<% end %>
-				</td>
-			</tr>
-		</table>
-	</div>
 
-	<h3>Color</h3>
-	<div class="field"> 
-		<table id="color_table">
-			<tr>
-				<% @colors.each do |color| %>
-					<td style='background-color: #<%=color%>;'>
-						&nbsp;
-					</td>
-				<% end %>
-			</tr>
-			<tr>
-				<% @colors.each do |color| %>
-					<% is_selected = @tasting[:color] == color %>
-					<% selected_color = (is_selected ? 'orange' : 'yellow') %>
-					<td id="color_box_<%=color%>" class="color_field" style='background-color: <%=selected_color%>'>
-						<%= radio_button_tag 'tasting[color]', color, is_selected, :style => "display: none;" %>
-						<a onclick="setColor('<%=color%>')">
-							<%= @color_index[color] %>
-						</a>
-					</td>
-				<% end %>
-			</tr>
-		</table>
-	</div>
+	User:
+	<%= f.select( :user_id, @users.collect{ |u| [u.name, u.id] } ) %>
+
+	Wine:
+	<%= f.select( :wine_id, @wines.collect{ |w| [w.name, w.id] } ) %>
+
+	<h3>Traits</h3>
+	<%= f.select( :color, [["==Select color==", 999]] + @colors.collect{ |c| [@color_index[c], c]})%>
 	
-  <div class="field">
-    <h3>Flavor</h3>
-    <table class="noborder">
-			<tr>
-				<td>Aroma</td>
-				<td>Taste</td>
-				<td>Aftertaste</td>
-			</tr>
-			<tr>
-				<td>
-					<%= f.text_field :adjs_aroma, 
-						:value => (@tasting ? @tasting[:adjs_aroma] : 'start typing to see suggestions ...'), 
-						:size => 40 %>
-				</td>
-				<td><%= f.text_field :adjs_taste, :size => 40 %></td>
-				<td><%= f.text_field :adjs_aftertaste, :size => 40 %></td>
-			</tr>
-		</table>
-  </div>
+	Aroma:
+	<%= f.text_field :adjs_aroma %>
+	
+	Taste:
+	<%= f.text_field :adjs_taste %>
+	
+	Aftertaste:
+	<%= f.text_field :adjs_aftertaste %>
 	
 	<h3>Dimensions</h3>
-	<table id="eval_table">
-		<tr>
-			<th class="noborder"></th>
-			<th class="noborder">less</th>
-			<th class="noborder"></th>
-			<th class="noborder"></th>
-			<th class="noborder"></th>
-			<th class="noborder"></th>
-			<th class="noborder"></th>
-			<th class="noborder">more</th>
-		</tr>
-		
-		<% %w{acidity astringency alcohol sweetness body intensity}.each_with_index do |trait, i| %>
-			<tr class="separator" />
-			<tr>
-				<td class="eval_trait">
-					<label for="tasting_trait_<%=trait%>">
-						<%= trait %>
-					</label>
-				</td>
-				<% (-3..3).each do |j| %>
-					<% is_selected = (@tasting[('trait_'+trait).to_sym] == j)%>
-					<% selected_color = (is_selected ? 'orange' : 'yellow') %>
-					<td id="trait_box_<%=trait%>_<%=j%>" class="eval_field" style='background-color: <%=selected_color%>'>
-						<%= radio_button_tag "tasting[trait_"+trait+"]", j, is_selected, :style => "display: none;" %>
-						<a onclick="setTrait('<%=trait%>',<%=j%>)">
-							<%= @trait_indices[trait.to_sym][j+3] %>
-						</a>
-					</td>
-				<% end %>
-			</tr>
-		<% end %>
-	</table>
-
+	<% %w{acidity astringency alcohol sweetness body intensity}.each_with_index do |trait, i| %>
+		<%= f.select( ("trait_" + trait).to_sym, [["== Select " + trait + " ==", 999]] + (-3..3).collect{ |j| [@trait_indices[trait.to_sym][j+3], i] })%>
+	<% end %>	
+	
 	<h3>Setting</h3>
   <div class="field">
     When did you drink it?<br />

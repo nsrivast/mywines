@@ -1,14 +1,8 @@
-
-<%= form_tag('/wines/guesser', :remote => true) %>
-	<%= hidden_field_tag 'input_name' %>
-	<input id="guessButton" onclick="beforeGuessing()" name="commit" type="submit" value="Click here" /> to guess values from the name.
-</form>
-
 <%= form_for(@wine) do |f| %>
   <% if @wine.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
-			
+		
       <ul>
       <% @wine.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,35 +10,15 @@
       </ul>
     </div>
   <% end %>
-  	
-	<div class="field">
-		<table class="noborder">
-		  <tr>
-		    <td><%= f.label :name %></td><td><%= f.text_field :name, :size => 100 %></td>
-		  </tr>
-		  <tr>
-		    <td><%= f.label :price %></td><td><%= f.text_field :price, :size => 5 %></td>
-		  </tr>
-		  <tr>
-		    <td><%= f.label :purchased %></td><td><%= f.text_field :purchased, :size => 100 %></td>
-		  </tr>
-		  <tr>
-		    <td><%= f.label :photo %></td><td><%= f.file_field :photo %></td>
-		  </tr>
-		  <tr>
-		    <td><%= f.label :vintage %></td><td> <%= f.number_field :vintage %></td>
-		  </tr>
-		</table>
-	</div>
 	
-  
-	<table id="wine_varietal_table">
-		<thead><tr><th><%= f.label :varietal %></th></tr></thead>
-		<tbody><tr><td><%= f.text_field :varietal %></td></tr></tbody>
-	</table>
 	
-	<br />
+	<%= f.text_field :name, :size => 100, :placeholder => "Full name" %>
+	<%= f.text_field :price, :size => 5, :placeholder => "Price" %>
+	<%= f.text_field :purchased, :size => 100, :placeholder => "Purchased at" %>
+	<%= f.number_field :vintage, :placeholder => "Vintage" %>
 	
+	<%= f.text_field :varietal, :placeholder => "Varietal"%>
+
   <table id="wine_classification_table">
 		<thead>
 			<tr>
@@ -55,7 +29,7 @@
 				<th></th>
 	    </tr>
 		</thead>
-	
+
 		<tbody>
 			<tr>
 				<td>
@@ -78,7 +52,7 @@
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<br />
   <div class="actions">
     <%= f.submit %>

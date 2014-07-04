@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   # -- mobile device methods (from scottwb.com)
   def check_for_mobile
     session[:mobile_override] = params[:mobile] if params[:mobile]
-    prepare_for_mobile if mobile_device?
+    prepare_for_mobile #if mobile_device?
   end
 
   def prepare_for_mobile
