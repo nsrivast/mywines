@@ -1,4 +1,4 @@
-== My Wines
+## My Wines
 
 My Wines was a wine database and application I built to manage my knowledge and tastings of different wines. I wanted a more structured data format than was offered by other applications, such as tasting notes along flavor profiles and rankings for various taste metrics (e.g. acidity, body, intensity).
 
