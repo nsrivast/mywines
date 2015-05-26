@@ -6,11 +6,9 @@
 </div>
 
 <div class="content">
-	<div class="main_table">
 		<% if @wines.nil? || @wines.length == 0 %>
 			No wines exist yet. <%= link_to 'Click here', new_wine_path %> to add one.<br /><br />
 		<% else %>
 			<%= render :partial => 'wines/table', :locals => {:wines => @wines} %>
 		<% end %>
-	</div>
 </div>

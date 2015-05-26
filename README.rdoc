@@ -1,10 +1,8 @@
-== To Do
+== My Wines
 
--- counts of tastings per user, country, region
+My Wines was a wine database and application I built to manage my knowledge and tastings of different wines.
 
-== Future 
 
-- fix photo
-- mobile version
-- geotagged classifications
-- add account functionality for users, user groups, private vs public on wines/tastings
+[This screenshot](https://github.com/nsrivast/mywines/blob/master/app/assets/images/wing.png) gives a basic example of its functionality:
+
+It was eventually folded into [Pensieve](http://pensiev.com/).

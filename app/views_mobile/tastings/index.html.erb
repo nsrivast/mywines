@@ -1,11 +1,16 @@
-<h2>Tastings list</h2>
+<div class="bar-standard bar-header-secondary">
+	<h3>
+		Tasting list &nbsp; &nbsp; &nbsp;
+		<button class="btn btn-positive"> <%= link_to 'Add a tasting', new_tasting_path %> </button> 
+	</h3>
+</div>
 
-<div class="main_table">
-	<% if @tastings.nil? || @tastings.length == 0 %>
-		No tastings created yet. <%= link_to 'Click here', new_tasting_path %> to add one.<br /><br />
-	<% else %>
-		<%= render :partial => 'table', :locals => {:tastings => @tastings, :search => true, :sort => true} %>
-	<% end %>
-</div>	
-
-<%= link_to 'Add a tasting', new_tasting_path %> 
+<div class="content">
+	<div class="main_table">
+		<% if @tastings.nil? || @tastings.length == 0 %>
+			No tastings created yet. <%= link_to 'Click here', new_tasting_path %> to add one.<br /><br />
+		<% else %>
+			<%= render :partial => 'table', :locals => {:tastings => @tastings, :search => true, :sort => true} %>
+		<% end %>
+	</div>	
+</div>
